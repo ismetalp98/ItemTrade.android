@@ -1,0 +1,162 @@
+[
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\font_poppins_medium.ttf.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\font\\poppins_medium.ttf"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_person.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\font_raleway_medium.ttf.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\font\\raleway_medium.ttf"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_person_black_24dp.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\ic_person_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_fragment_profile.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_register.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_add_black_24dp.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\ic_add_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_splash.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_tasks_not_selected.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\ic_tasks_not_selected.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_main.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\font_poppins.ttf.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\font\\poppins.ttf"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_fragment_tasks.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\fragment_tasks.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\color_selector_nav_colors.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\color\\selector_nav_colors.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_bg_badge.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\bg_badge.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\font_raleway.ttf.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\font\\raleway.ttf"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_bg_nav_profile.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\bg_nav_profile.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_item_task.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\item_task.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\menu_toolbar_items.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\menu\\toolbar_items.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_tasks.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\ic_tasks.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\menu_navigation_items.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\menu\\navigation_items.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_app_main_bar.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\app_main_bar.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_login.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_person_selected.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\ic_person_selected.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\layout_item_catagory.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\layout\\item_catagory.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_circle.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\circle.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\drawable_bg_nav_tasks.xml.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\drawable\\bg_nav_tasks.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\GitHub\\Bilkent_ACM_Tutorial\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    }
+]

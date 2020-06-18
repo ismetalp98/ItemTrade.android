@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_nav_tasks"
+        android:icon="@drawable/bg_nav_tasks"
+        android:title="Tasks" />
+
+    <item
+        android:id="@+id/menu_nav_profile"
+        android:icon="@drawable/bg_nav_profile"
+        android:title="Profile" />
+</menu>
