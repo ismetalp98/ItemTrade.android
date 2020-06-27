@@ -4,7 +4,7 @@
     <string name="firebase_database_url" translatable="false">https://bilkent-acm.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">46365317564</string>
     <string name="google_api_key" translatable="false">AIzaSyB7pqInuurHdHcyppq68Zl15iLBdGNkl3s</string>
-    <string name="google_app_id" translatable="false">1:46365317564:android:bf10ef158642a0b3df33b9</string>
+    <string name="google_app_id" translatable="false">1:46365317564:android:279d0425b2e21de1df33b9</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB7pqInuurHdHcyppq68Zl15iLBdGNkl3s</string>
     <string name="google_storage_bucket" translatable="false">bilkent-acm.appspot.com</string>
     <string name="project_id" translatable="false">bilkent-acm</string>

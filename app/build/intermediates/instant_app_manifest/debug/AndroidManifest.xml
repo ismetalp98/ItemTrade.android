@@ -10,6 +10,7 @@
         android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
     <!-- <uses-sdk android:minSdkVersion="14"/> -->
@@ -41,6 +42,20 @@
         <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Register" />
         <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Login" />
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="app.anchorapp.bilkentacm.com.squareup.picasso"
+            android:exported="false" />
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
@@ -53,6 +68,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"

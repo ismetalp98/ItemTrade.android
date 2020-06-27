@@ -1481,8 +1481,10 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_account_circle_black_24dp
 drawable ic_add_black_12dp
 drawable ic_add_black_24dp
+drawable ic_add_blackreal_24dp
 drawable ic_brush_black_24dp
 drawable ic_camera_alt_black_24dp
 drawable ic_computer_black_24dp
@@ -1621,7 +1623,10 @@ id beginning
 id bidirectional
 id blocking
 id bottom
+id btn_add_phonenumber
 id btn_login
+id btnchangepss
+id btneditprofile
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -1713,6 +1718,8 @@ id line3
 id linear
 id listMode
 id list_item
+id loginmaillayout
+id loginpsslayout
 id logoTitle
 id main_frame
 id main_toolbar
@@ -1779,14 +1786,14 @@ id percent
 id pin
 id profile_tabs
 id profile_view
+id profileimage
 id progressBar
 id progress_circular
 id progress_horizontal
+id propic
 id radio
 id reg_btn
-id reg_email
 id reg_lgn
-id reg_pss
 id right
 id right_icon
 id right_side
@@ -1862,6 +1869,8 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView1
+id textView2
+id textView3
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1886,7 +1895,18 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tv_email
 id tv_pss
+id tv_reg_email
+id tv_reg_email_layout
+id tv_reg_lastname
+id tv_reg_lastname_layout
+id tv_reg_name
+id tv_reg_name_layout
+id tv_reg_pss
+id tv_reg_pss_layout
 id tv_register
+id tw_mail
+id tw_name
+id tw_phone
 id unchecked
 id uniform
 id unlabeled
@@ -2981,6 +3001,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_paths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

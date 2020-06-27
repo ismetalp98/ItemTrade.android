@@ -8,18 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:46365317564:android:bf10ef158642a0b3df33b9",
+        "mobilesdk_app_id": "1:46365317564:android:279d0425b2e21de1df33b9",
         "android_client_info": {
           "package_name": "app.anchorapp.bilkentacm"
         }
       },
       "oauth_client": [
         {
-          "client_id": "46365317564-2p1p9dr7u73o7c80b5s2tpo56g341ae4.apps.googleusercontent.com",
+          "client_id": "46365317564-9t73m4p020fi8rv460su7p1vir0htotr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "app.anchorapp.bilkentacm",
-            "certificate_hash": "3b507416d158d01d50d3450e1ec3f113ac6042bb"
+            "certificate_hash": "0575f414bd40745db9e867d42d49ddd184906c76"
           }
         },
         {

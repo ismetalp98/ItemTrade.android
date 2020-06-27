@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\GitHub\\Bilkent_ACM\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+            "outputFile": "C:\\GitHub\\asd\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\fe4a86ad590ee5d39bd92b59f4761dd1\\material-1.3.0-alpha01\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",

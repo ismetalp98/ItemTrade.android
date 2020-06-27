@@ -27,8 +27,7 @@
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoTitle"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.784" />
 </androidx.constraintlayout.widget.ConstraintLayout>

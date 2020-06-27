@@ -7,13 +7,157 @@
     android:layout_height="match_parent"
     tools:context=".fragments.Tab3Fragment">
 
+    <ImageButton
+        android:id="@+id/btn_add_phonenumber"
+        android:clickable="false"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:visibility="invisible"
+        android:layout_marginTop="392dp"
+        android:background="@color/colorWhite"
+        android:src="@drawable/ic_add_blackreal_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profileimage"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:src="@drawable/bg_badge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.098" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btneditprofile"
+        android:layout_width="312dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="148dp"
+        android:text="Edit profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnchangepss"
+        android:layout_width="312dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="36dp"
+        android:text="Change Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btneditprofile"
+        app:layout_constraintVertical_bias="0.271"
+        tools:ignore="MissingConstraints" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tw_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tab3"
+        android:layout_marginBottom="24dp"
+        android:text="Full Name"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.275"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tw_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-Mail"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.123"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:text="Full Name"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.559"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tw_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not Entered"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/propic"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@color/colorWhite"
+        android:src="@drawable/ic_add_blackreal_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profileimage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

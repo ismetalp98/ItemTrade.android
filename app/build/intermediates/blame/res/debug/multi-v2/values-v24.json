@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\GitHub\\Bilkent_ACM\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\GitHub\\asd\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\3edfbc7b78ed5b8b0b6ccffd1386d8d8\\media-1.0.0\\res\\values-v24\\values-v24.xml",

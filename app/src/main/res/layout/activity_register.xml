@@ -19,8 +19,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.068" />
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/tv_reg_email_layout"
+        app:errorEnabled="true"
         android:layout_width="329dp"
         android:layout_height="56dp"
         android:hint="Email"
@@ -32,13 +35,15 @@
         app:layout_constraintVertical_bias="0.343">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reg_email"
+            android:id="@+id/tv_reg_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/tv_reg_name_layout"
+        app:errorEnabled="true"
         android:layout_width="329dp"
         android:layout_height="56dp"
         android:hint="First Name"
@@ -51,6 +56,7 @@
         app:layout_constraintVertical_bias="0.025">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_reg_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -59,6 +65,8 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="329dp"
         android:layout_height="56dp"
+        android:id="@+id/tv_reg_lastname_layout"
+        app:errorEnabled="true"
         android:hint="Last Name"
         app:boxBackgroundMode="outline"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,16 +77,18 @@
         app:layout_constraintVertical_bias="0.173">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_reg_lastname"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/tv_reg_pss_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="329dp"
         android:layout_height="56dp"
         android:hint="Password"
+        app:errorEnabled="true"
         app:boxBackgroundMode="outline"
         app:endIconMode="password_toggle"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +98,7 @@
         app:layout_constraintVertical_bias="0.54">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reg_pss"
+            android:id="@+id/tv_reg_pss"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -97,11 +107,12 @@
         android:id="@+id/materialTextView2"
         android:layout_width="230dp"
         android:layout_height="34dp"
+        android:layout_marginBottom="68dp"
         android:text="Have you an account "
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintHorizontal_bias="0.209"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.683" />
@@ -119,19 +130,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/materialTextView2"
         app:layout_constraintTop_toBottomOf="@+id/reg_btn"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/reg_btn"
         style="@style/Widget.AppCompat.Light.ActionButton"
         android:layout_width="323dp"
         android:layout_height="77dp"
+        android:layout_marginBottom="36dp"
         android:background="@color/button"
         android:text="Register"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/materialTextView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 

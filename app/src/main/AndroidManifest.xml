@@ -3,6 +3,7 @@
     package="app.anchorapp.bilkentacm">
 
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -22,6 +23,15 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Signin_Signup.Register" />
         <activity android:name=".Signin_Signup.Login" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
     </application>
 
 </manifest>
