@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,10 +20,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.InputStream;
 import java.util.HashMap;
 
 import app.anchorapp.bilkentacm.MainActivity;
@@ -53,6 +59,7 @@ public class Register extends AppCompatActivity {
         login = findViewById(R.id.reg_lgn);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,11 +96,14 @@ public class Register extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                HashMap<String,Object> user = new HashMap<>();
-                                user.put("fName",loginname + loginlastname);
-                                user.put("email",loginEmail);
-                                user.put("phonenumber",null);
-                                DocumentReference documentReference = fStore.collection("Users").document(fAuth.getCurrentUser().getUid());
+                                final FirebaseUser fuser = fAuth.getCurrentUser();
+                                fuser.sendEmailVerification();
+                                HashMap<String, Object> user = new HashMap<>();
+                                user.put("name", loginname);
+                                user.put("lastname", loginlastname);
+                                user.put("email", loginEmail);
+                                user.put("phonenumber", null);
+                                DocumentReference documentReference = fStore.collection("Users").document(fuser.getUid());
                                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {

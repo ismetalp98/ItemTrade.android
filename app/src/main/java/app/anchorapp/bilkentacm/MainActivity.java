@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import app.anchorapp.bilkentacm.Signin_Signup.Login;
 import app.anchorapp.bilkentacm.adapters.ChecklistAdapter;
 import app.anchorapp.bilkentacm.fragments.ProfileFragment;
+import app.anchorapp.bilkentacm.fragments.Tab3Fragment;
 import app.anchorapp.bilkentacm.fragments.TasksFragment;
 import app.anchorapp.bilkentacm.models.Catagory;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment mCurrentFragment;
     private ProfileFragment profileFragment;
     private TasksFragment tasksFragment;
+    FirebaseAuth fauth;
 
 
     @Override
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNav = findViewById(R.id.asd);
-
+        /*fauth = FirebaseAuth.getInstance();
+        Tab3Fragment.control =  fauth.getCurrentUser().isEmailVerified();*/
         //Bottom navigation
         profileFragment = new ProfileFragment();
         tasksFragment = new TasksFragment();
@@ -60,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                         switchFragment(tasksFragment, "tasks");
                         break;
                 }
-
                 return true;
             }
         });

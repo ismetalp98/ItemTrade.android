@@ -82,9 +82,9 @@ public class TasksFragment extends Fragment {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.toolbar_logout:
-                        fAuth.signOut();
                         startActivity(new Intent(getContext(), Login.class));
                         getActivity().finish();
+                        fAuth.signOut();
                         break;
                 }
                 return true;

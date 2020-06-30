@@ -1625,6 +1625,7 @@ id blocking
 id bottom
 id btn_add_phonenumber
 id btn_login
+id btn_verify
 id btnchangepss
 id btneditprofile
 id buttonPanel
@@ -1894,6 +1895,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tv_email
+id tv_notification
 id tv_pss
 id tv_reg_email
 id tv_reg_email_layout
@@ -1904,6 +1906,7 @@ id tv_reg_name_layout
 id tv_reg_pss
 id tv_reg_pss_layout
 id tv_register
+id tv_warning
 id tw_mail
 id tw_name
 id tw_phone
