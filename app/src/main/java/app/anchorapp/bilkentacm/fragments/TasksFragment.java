@@ -2,39 +2,51 @@ package app.anchorapp.bilkentacm.fragments;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.ArrayList;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import app.anchorapp.bilkentacm.R;
 import app.anchorapp.bilkentacm.Signin_Signup.Login;
-import app.anchorapp.bilkentacm.adapters.ChecklistAdapter;
-import app.anchorapp.bilkentacm.models.Catagory;
+import app.anchorapp.bilkentacm.models.Item;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TasksFragment extends Fragment {
 
-    private FirebaseAuth fAuth;
+    private FirebaseAuth fauth;
     private ExtendedFloatingActionButton fab;
     private Toolbar toolbar;
+    FirestoreRecyclerAdapter<Item, ItemViewHolder> noteAdapter;
+    RecyclerView itemList;
+    FirebaseFirestore fStore;
+    FirebaseUser user;
+    StorageReference storageReference;
     public TasksFragment() {
         // Required empty public constructor
     }
@@ -45,10 +57,15 @@ public class TasksFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tasks, container, false);
-
-        fAuth = FirebaseAuth.getInstance();
         fab = view.findViewById(R.id.task_fab);
-        RecyclerView recyclerView = view.findViewById(R.id.fragment_task_recycler_view);
+        fauth = FirebaseAuth.getInstance();
+        itemList = view.findViewById(R.id.itemList);
+        fStore = FirebaseFirestore.getInstance();
+        fauth = FirebaseAuth.getInstance();
+        user = fauth.getCurrentUser();
+        storageReference = FirebaseStorage.getInstance().getReference();
+
+        /*RecyclerView recyclerView = view.findViewById(R.id.fragment_task_recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -71,7 +88,52 @@ public class TasksFragment extends Fragment {
 
         synchronized (recyclerView) {
             recyclerView.notifyAll();
-        }
+        }*/
+
+        Query query = fStore.collection("Items").orderBy("title");
+        FirestoreRecyclerOptions<Item> allNotes = new FirestoreRecyclerOptions.Builder<Item>()
+                .setQuery(query,Item.class)
+                .build();
+
+        noteAdapter = new FirestoreRecyclerAdapter<Item, ItemViewHolder>(allNotes) {
+
+            @Override
+            public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Item item) {
+                itemViewHolder.noteTitle.setText(item.getTitle());
+                final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
+                StorageReference profileRef = storageReference.child("Items/" + docId  + "/image0");
+                profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(itemViewHolder.imageView);
+                    }
+                });
+
+
+                /*noteViewHolder.view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(v.getContext(), NoteDetails.class);
+                        i.putExtra("title", note.getTitle());
+                        i.putExtra("content", note.getContent());
+                        i.putExtra("code", code);
+                        i.putExtra("noteId", docId);
+                        v.getContext().startActivity(i);
+                    }
+                });*/
+            }
+
+            @NonNull
+            @Override
+            public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_item_cardview,parent,false);
+                return new ItemViewHolder(view);
+            }
+        };
+
+
+        itemList.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        itemList.setAdapter(noteAdapter);
 
         //Set toolbar
 
@@ -84,7 +146,7 @@ public class TasksFragment extends Fragment {
                     case R.id.toolbar_logout:
                         startActivity(new Intent(getContext(), Login.class));
                         getActivity().finish();
-                        fAuth.signOut();
+                        fauth.signOut();
                         break;
                 }
                 return true;
@@ -102,6 +164,34 @@ public class TasksFragment extends Fragment {
         return view;
     }
 
+    public class ItemViewHolder extends RecyclerView.ViewHolder{
+        public TextView noteTitle;
+        View view;
+        ImageView imageView;
 
+
+        public ItemViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            noteTitle = itemView.findViewById(R.id.cardview_title);
+            imageView = itemView.findViewById(R.id.cardview_photo);
+
+            view = itemView;
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        noteAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (noteAdapter != null) {
+            noteAdapter.stopListening();
+        }
+    }
 
 }

@@ -1,32 +1,20 @@
 package app.anchorapp.bilkentacm;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.ArrayList;
-
-import app.anchorapp.bilkentacm.Signin_Signup.Login;
-import app.anchorapp.bilkentacm.adapters.ChecklistAdapter;
 import app.anchorapp.bilkentacm.fragments.ProfileFragment;
-import app.anchorapp.bilkentacm.fragments.Tab3Fragment;
 import app.anchorapp.bilkentacm.fragments.TasksFragment;
-import app.anchorapp.bilkentacm.models.Catagory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment mCurrentFragment;
     private ProfileFragment profileFragment;
     private TasksFragment tasksFragment;
-    FirebaseAuth fauth;
+
 
 
     @Override
@@ -45,12 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNav = findViewById(R.id.asd);
-        /*fauth = FirebaseAuth.getInstance();
-        Tab3Fragment.control =  fauth.getCurrentUser().isEmailVerified();*/
-        //Bottom navigation
         profileFragment = new ProfileFragment();
         tasksFragment = new TasksFragment();
         mCurrentFragment = tasksFragment;
+
         setFragment(tasksFragment, "tasks");
         bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -66,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
 
     }
 
@@ -89,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         mCurrentFragment = fragment;
         fragmentTransaction.commit();
     }
+
+
 
 
     private void hideSystemUI() {
@@ -114,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar_items, menu);
         return true;
     }
+
+
 }
     //Drawer
    /* @Override

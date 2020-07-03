@@ -8,12 +8,12 @@
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_tab1.xml.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\fragment_tab1.xml"
-    },
-    {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_selected.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable\\ic_person_selected.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_tab1.xml.flat",
+        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\fragment_tab1.xml"
     },
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
@@ -28,6 +28,10 @@
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_item_cardview.xml.flat",
+        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\item_item_cardview.xml"
+    },
+    {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_additem_photos.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\additem_photos.xml"
     },
@@ -36,12 +40,12 @@
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_computer_black_24dp.xml.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable\\ic_computer_black_24dp.xml"
-    },
-    {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_dropdown_item.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\dropdown_item.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_computer_black_24dp.xml.flat",
+        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable\\ic_computer_black_24dp.xml"
     },
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
@@ -94,6 +98,10 @@
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_more_vert_black_24dp.xml.flat",
+        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable\\ic_more_vert_black_24dp.xml"
     },
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bg_badge.xml.flat",
@@ -178,10 +186,6 @@
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\xml_file_paths.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\xml\\file_paths.xml"
-    },
-    {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_appbar_main.xml.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\appbar_main.xml"
     },
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imageview.xml.flat",

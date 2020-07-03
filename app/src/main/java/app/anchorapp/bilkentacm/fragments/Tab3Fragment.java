@@ -3,15 +3,11 @@ package app.anchorapp.bilkentacm.fragments;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,15 +33,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.concurrent.Executor;
 
 import app.anchorapp.bilkentacm.R;
-import app.anchorapp.bilkentacm.models.User;
-import io.grpc.Context;
 
 public class Tab3Fragment extends Fragment {
 
@@ -118,7 +108,6 @@ public class Tab3Fragment extends Fragment {
                     Picasso.get().load(uri).into(profileimage);
                 }
             });
-            System.out.println(control);
 
         /*if (control)
         {

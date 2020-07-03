@@ -7,19 +7,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.AddItem">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:background="@color/colorWhite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/additem_toolbar"
             android:layout_width="match_parent"
             android:elevation="12dp"
             android:layout_height="?attr/actionBarSize" />
-    </com.google.android.material.appbar.AppBarLayout>
 
     <HorizontalScrollView
         android:id="@+id/additem_recylerview"
@@ -62,6 +55,7 @@
                 app:helperText="Vitrin adı">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addItem_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -78,6 +72,7 @@
                 app:helperText="Abart">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addItem_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -96,6 +91,7 @@
                 app:helperText="Detay">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addItem_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -114,13 +110,14 @@
                 app:startIconDrawable="@drawable/abc_vector_test">
 
                 <AutoCompleteTextView
-                    android:id="@+id/additem_autocomplete"
+                    android:id="@+id/addItem_catagory"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/btn_additem_add"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="50dp"

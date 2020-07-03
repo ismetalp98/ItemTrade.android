@@ -1492,6 +1492,7 @@ drawable ic_ee_24dp
 drawable ic_euro_symbol_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_more_vert_black_24dp
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1603,7 +1604,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id additem_autocomplete
+id addItem_catagory
+id addItem_content
+id addItem_price
+id addItem_title
 id additem_catagory
 id additem_image
 id additem_recylerview
@@ -1613,9 +1617,7 @@ id adjust_width
 id alertTitle
 id all
 id always
-id appBarLayout
 id asd
-id asd1
 id async
 id auto
 id barrier
@@ -1624,6 +1626,7 @@ id bidirectional
 id blocking
 id bottom
 id btn_add_phonenumber
+id btn_additem_add
 id btn_login
 id btn_verify
 id btnchangepss
@@ -1631,6 +1634,8 @@ id btneditprofile
 id buttonPanel
 id cancel_action
 id cancel_button
+id cardview_photo
+id cardview_title
 id catagory_image
 id catagory_text
 id center
@@ -1689,7 +1694,6 @@ id fitToContents
 id fixed
 id floating
 id forever
-id fragment_task_recycler_view
 id gallery
 id ghost_view
 id ghost_view_holder
@@ -1708,6 +1712,7 @@ id incoming
 id info
 id invisible
 id italic
+id itemList
 id item_task_rlt_img
 id item_touch_helper_previous_elevation
 id labeled
@@ -1761,6 +1766,7 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id myitemList
 id navigation_header_container
 id never
 id noScroll
@@ -1864,7 +1870,6 @@ id text
 id text2
 id textEnd
 id textInputLayout
-id textScrollView
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -1990,7 +1995,6 @@ layout activity_main
 layout activity_register
 layout activity_splash
 layout additem_photos
-layout appbar_main
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2014,6 +2018,7 @@ layout fragment_tab2
 layout fragment_tab3
 layout fragment_tasks
 layout item_catagory
+layout item_item_cardview
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
