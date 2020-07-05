@@ -45,8 +45,9 @@ public class TasksFragment extends Fragment {
     FirestoreRecyclerAdapter<Item, ItemViewHolder> noteAdapter;
     RecyclerView itemList;
     FirebaseFirestore fStore;
-    FirebaseUser user;
+    FirebaseUser fUser;
     StorageReference storageReference;
+    String itemOwner;
     public TasksFragment() {
         // Required empty public constructor
     }
@@ -62,7 +63,7 @@ public class TasksFragment extends Fragment {
         itemList = view.findViewById(R.id.itemList);
         fStore = FirebaseFirestore.getInstance();
         fauth = FirebaseAuth.getInstance();
-        user = fauth.getCurrentUser();
+        fUser = fauth.getCurrentUser();
         storageReference = FirebaseStorage.getInstance().getReference();
 
         /*RecyclerView recyclerView = view.findViewById(R.id.fragment_task_recycler_view);
@@ -90,6 +91,7 @@ public class TasksFragment extends Fragment {
             recyclerView.notifyAll();
         }*/
 
+
         Query query = fStore.collection("Items").orderBy("title");
         FirestoreRecyclerOptions<Item> allNotes = new FirestoreRecyclerOptions.Builder<Item>()
                 .setQuery(query,Item.class)
@@ -101,6 +103,9 @@ public class TasksFragment extends Fragment {
             public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Item item) {
                 itemViewHolder.noteTitle.setText(item.getTitle());
                 final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
+                final long view = noteAdapter.getSnapshots().getSnapshot(i).getLong("viewcount");
+
+
                 StorageReference profileRef = storageReference.child("Items/" + docId  + "/image0");
                 profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
@@ -110,24 +115,26 @@ public class TasksFragment extends Fragment {
                 });
 
 
-                /*noteViewHolder.view.setOnClickListener(new View.OnClickListener() {
+                itemViewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(v.getContext(), NoteDetails.class);
-                        i.putExtra("title", note.getTitle());
-                        i.putExtra("content", note.getContent());
-                        i.putExtra("code", code);
-                        i.putExtra("noteId", docId);
+                        Intent i = new Intent(v.getContext(), ItemDetail.class);
+                        i.putExtra("viewcount",String.valueOf(view));
+                        i.putExtra("owner",itemOwner);
+                        i.putExtra("title", item.getTitle());
+                        i.putExtra("price", item.getPrice());
+                        i.putExtra("content", item.getContent());
+                        i.putExtra("itemId", docId);
                         v.getContext().startActivity(i);
                     }
-                });*/
+                });
             }
 
             @NonNull
             @Override
             public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_item_cardview,parent,false);
-                return new ItemViewHolder(view);
+                    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_item_cardview, parent, false);
+                    return new ItemViewHolder(view);
             }
         };
 
@@ -172,11 +179,10 @@ public class TasksFragment extends Fragment {
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            noteTitle = itemView.findViewById(R.id.cardview_title);
-            imageView = itemView.findViewById(R.id.cardview_photo);
-
-            view = itemView;
+            System.out.println(itemOwner + " aaaaaa " + fUser.getUid() + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                noteTitle = itemView.findViewById(R.id.cardview_title);
+                imageView = itemView.findViewById(R.id.cardview_photo);
+                view = itemView;
         }
     }
 

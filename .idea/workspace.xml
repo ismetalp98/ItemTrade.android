@@ -38,9 +38,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="resourceFile" />
         <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -51,7 +51,7 @@
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-25T15:07:51.194Z" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -72,6 +72,8 @@
       <recent name="app.anchorapp.bilkentacm.Signin_Signup" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GitHub\asd\app\src\main\res\drawable" />
+      <recent name="C:\GitHub\asd\app\src\main\res\layout" />
       <recent name="C:\GitHub\Bilkent_ACM\app\src\main\res\drawable" />
       <recent name="C:\GitHub\Bilkent_ACM_Tutorial\app\src\main\res\menu" />
     </key>

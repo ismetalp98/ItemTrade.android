@@ -28,7 +28,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/FullScreen" >
-        <activity android:name="app.anchorapp.bilkentacm.fragments.AddItem" />
         <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +37,9 @@
         </activity>
         <activity android:name="app.anchorapp.bilkentacm.MainActivity" />
         <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Register" />
+        <activity android:name="app.anchorapp.bilkentacm.fragments.AddItem" />
+        <activity android:name="app.anchorapp.bilkentacm.fragments.ItemDetail" />
+        <activity android:name="app.anchorapp.bilkentacm.fragments.Message" />
         <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Login" />
 
         <provider

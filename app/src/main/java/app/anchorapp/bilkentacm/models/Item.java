@@ -4,19 +4,37 @@ import android.media.Image;
 
 public class Item {
 
-    String title,content,itemId;
+    String title,content,itemId,price,viewcount;
     Image photo;
 
     public Item() { }
 
-    public Item(String title, String content,String itemId) {
+    public Item(String title, String content,String itemId,String price, String viewcount) {
         this.title = title;
         this.content = content;
         this.itemId = itemId;
+        this.price = price;
+        this.viewcount = viewcount;
     }
 
     public String getItemId() {
         return itemId;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getView() {
+        return viewcount;
+    }
+
+    public void setView(String view) {
+        this.viewcount = view;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public void setItemId(String itemId) {

@@ -1,9 +1,12 @@
 package app.anchorapp.bilkentacm.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,10 +16,14 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import app.anchorapp.bilkentacm.R;
 import app.anchorapp.bilkentacm.models.Item;
@@ -28,6 +35,7 @@ public class Tab2Fragment extends Fragment {
     FirebaseFirestore fStore;
     FirebaseUser user;
     private FirebaseAuth fauth;
+    StorageReference storageReference;
 
     public Tab2Fragment() {
         // Required empty public constructor
@@ -44,6 +52,7 @@ public class Tab2Fragment extends Fragment {
         itemList = view.findViewById(R.id.myitemList);
         fStore = FirebaseFirestore.getInstance();
         user = fauth.getCurrentUser();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
 
         Query query = fStore.collection("Users").document(user.getUid()).collection("myItems").orderBy("title");
@@ -54,22 +63,31 @@ public class Tab2Fragment extends Fragment {
         noteAdapter = new FirestoreRecyclerAdapter<Item, ItemViewHolder>(allNotes) {
 
             @Override
-            public void onBindViewHolder(@NonNull ItemViewHolder noteViewHolder, final int i, @NonNull final Item note) {
-                noteViewHolder.noteTitle.setText(note.getTitle());
-                //noteViewHolder.imageView.setImageResource(note.getPhoto().getFormat());
-                //final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
+            public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Item item) {
+                itemViewHolder.noteTitle.setText(item.getTitle());
+                final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
+                final long view = noteAdapter.getSnapshots().getSnapshot(i).getLong("viewcount");
+                StorageReference profileRef = storageReference.child("Items/" + docId  + "/image0");
+                profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(itemViewHolder.imageView);
+                    }
+                });
 
-                /*noteViewHolder.view.setOnClickListener(new View.OnClickListener() {
+
+                itemViewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(v.getContext(), NoteDetails.class);
-                        i.putExtra("title", note.getTitle());
-                        i.putExtra("content", note.getContent());
-                        i.putExtra("code", code);
-                        i.putExtra("noteId", docId);
+                        Intent i = new Intent(v.getContext(), ItemDetail.class);
+                        i.putExtra("viewcount",String.valueOf(view));
+                        i.putExtra("title", item.getTitle());
+                        i.putExtra("price", item.getPrice());
+                        i.putExtra("content", item.getContent());
+                        i.putExtra("itemId", docId);
                         v.getContext().startActivity(i);
                     }
-                });*/
+                });
             }
 
             @NonNull
@@ -89,13 +107,13 @@ public class Tab2Fragment extends Fragment {
     public class ItemViewHolder extends RecyclerView.ViewHolder{
         public TextView noteTitle;
         View view;
-        //ImageView imageView;
+        ImageView imageView;
+
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-
             noteTitle = itemView.findViewById(R.id.cardview_title);
-            //imageView = itemView.findViewById(R.id.cardview_photo);
+            imageView = itemView.findViewById(R.id.cardview_photo);
             view = itemView;
         }
     }

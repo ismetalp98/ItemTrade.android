@@ -14,7 +14,8 @@
         android:fitsSystemWindows="true"
         android:layout_height="112dp"
         android:layout_margin="10dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/cardview_title"

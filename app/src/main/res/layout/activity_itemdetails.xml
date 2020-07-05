@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/itemdetail_toolbar"
+
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="12dp"/>
+
+    <ImageView
+        android:id="@+id/itemdetail_photos"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="180dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="74dp" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/itemdetail_price"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/itemdetail_photos"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="19dp" />
+
+    <TextView
+        android:id="@+id/itemdetail_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@id/itemdetail_photos"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/itemdetail_content"
+            android:layout_width="373dp"
+            android:layout_height="198dp"
+            android:layout_below="@id/itemdetail_price"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="24sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/image"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemdetail_content"
+        android:src="@drawable/ic_remove_red_eye_black_24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:textSize="22dp"
+        android:id="@+id/itemdetail_viewcount"
+        android:layout_below="@id/itemdetail_content"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/image"
+        android:layout_marginStart="20dp" />
+
+    <Button
+        android:id="@+id/itemdetail_fav"
+        android:layout_width="48dp"
+        android:onClick="setAddFav"
+        android:layout_height="48dp"
+        android:layout_below="@id/itemdetail_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="41dp" />
+
+        <Button
+            android:id="@+id/itemdetail_sendMessage"
+            android:onClick="sendMessage"
+            android:layout_width="240dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/itemdetail_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="77dp" />
+    </RelativeLayout>
+
+</ScrollView>

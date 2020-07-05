@@ -57,6 +57,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tv_pss"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -104,5 +105,6 @@
         app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

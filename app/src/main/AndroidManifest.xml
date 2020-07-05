@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".fragments.AddItem"></activity>
         <activity android:name=".Signin_Signup.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +22,9 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".Signin_Signup.Register" />
+        <activity android:name=".fragments.AddItem"/>
+        <activity android:name=".fragments.ItemDetail" />
+        <activity android:name=".fragments.Message" />
         <activity android:name=".Signin_Signup.Login" />
         <provider
             android:name="androidx.core.content.FileProvider"

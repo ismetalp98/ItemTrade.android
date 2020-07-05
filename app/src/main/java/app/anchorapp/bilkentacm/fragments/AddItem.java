@@ -1,16 +1,11 @@
 package app.anchorapp.bilkentacm.fragments;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -36,7 +31,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
@@ -135,6 +129,7 @@ public class AddItem extends AppCompatActivity {
                 item.put("title",titleToAdd);
                 item.put("content",contentToAdd);
                 item.put("price",priceToAdd);
+                item.put("viewcount",0);
                 item.put("catagory",selection);
                 item.put("owner",fUser.getUid());
                 DocumentReference documentReference = fStore.collection("Items").document();
@@ -146,7 +141,6 @@ public class AddItem extends AppCompatActivity {
 
                 for(int i = 0 ; i < images.size() ; i++) {
                     Uri content = images.get(i);
-                    System.out.println(content);
                     uploadImageToFirebase("image" + i, content);
                 }
             }
