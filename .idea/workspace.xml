@@ -38,9 +38,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,10 +51,12 @@
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_API_29" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-25T15:07:51.194Z" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Pixel_3_API_29&#10;Pixel_3a_API_29" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="PsdUISettings">
@@ -62,6 +64,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHub\asd\app\src\main\res\font" />
       <recent name="C:\GitHub\asd\app\src\main\res\drawable" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -71,9 +74,13 @@
       <recent name="app.anchorapp.bilkentacm.fragments" />
       <recent name="app.anchorapp.bilkentacm.Signin_Signup" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.anchorapp.bilkentacm.adapters" />
+      <recent name="app.anchorapp.bilkentacm.fragments" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\GitHub\asd\app\src\main\res\drawable" />
       <recent name="C:\GitHub\asd\app\src\main\res\layout" />
+      <recent name="C:\GitHub\asd\app\src\main\res\drawable" />
       <recent name="C:\GitHub\Bilkent_ACM\app\src\main\res\drawable" />
       <recent name="C:\GitHub\Bilkent_ACM_Tutorial\app\src\main\res\menu" />
     </key>

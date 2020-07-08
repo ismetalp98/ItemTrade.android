@@ -1,18 +1,13 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
     <style name="FullScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="colorPrimary">#D5ECEFF1</item>
     </style>
 
     <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
@@ -23,5 +18,95 @@
         <item name="colorSecondary">#FEDBD0</item>
         <item name="android:src">@drawable/ic_send_black</item>
     </style>
+
+    <style name="Widget.App.FloatingActionButton1" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.FloatingActionButton1</item>
+    </style>
+
+    <style name="ThemeOverlay.App.FloatingActionButton1" parent="">
+        <item name="colorSecondary">#b00020</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+
+
+
+    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Card</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Card" parent="">
+        <item name="colorPrimary">#FFF</item>
+        <item name="colorSurface">#D5ECEFF1</item>
+        <item name="colorOnSurface">#FFF</item>
+
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button" parent="">
+        <item name="colorPrimary">#B00020</item>
+        <item name="colorOnPrimary">#FEDBD0</item>
+    </style>
+
+    <style name="Widget.App.Button.fav" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.fav</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.fav" parent="">
+        <item name="colorPrimary">#D50000</item>
+        <item name="colorOnPrimary">#D50000</item>
+    </style>
+
+    <style name="Widget.App.Button.message" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.message</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.message" parent="">
+        <item name="icon">@drawable/ic_send_black
+        </item>
+        <item name="colorPrimary">#b00020</item>
+        <item name="colorOnPrimary">#81C784</item>
+    </style>
+
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorPrimary">#790000 </item>
+        <item name="colorOnSurface">#790000</item>
+        <item name="colorError">#B00020</item>
+    </style>
+
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorPrimary">#B00020</item>
+        <item name="colorOnPrimary">#B00020</item>
+    </style>
+
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button.alert</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.App.Button.alert</item>
+    </style>
+
+    <style name="Widget.App.Button.alert" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.alert</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Button.alert" parent="">
+        <item name="colorPrimary">#fff</item>
+        <item name="colorOnPrimary">#B00020</item>
+    </style>
+
 
 </resources>

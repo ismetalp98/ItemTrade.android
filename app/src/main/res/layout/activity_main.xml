@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
 
 
@@ -17,13 +17,14 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/asd"
         android:layout_width="match_parent"
+        style="@style/Widget.App.BottomNavigationView"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
         android:background="@color/colorWhite"
-        android:theme="@style/Widget.MaterialComponents.BottomNavigationView"
         app:itemIconTint="@color/selector_nav_colors"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/navigation_items"/>
+        app:menu="@menu/navigation_items"
+        app:itemRippleColor="#b00020"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

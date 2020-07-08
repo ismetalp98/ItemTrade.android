@@ -26,6 +26,7 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import app.anchorapp.bilkentacm.R;
+import app.anchorapp.bilkentacm.activities.ItemDetail;
 import app.anchorapp.bilkentacm.models.Item;
 
 public class Tab2Fragment extends Fragment {
@@ -66,7 +67,8 @@ public class Tab2Fragment extends Fragment {
             public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Item item) {
                 itemViewHolder.noteTitle.setText(item.getTitle());
                 final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
-                final long view = noteAdapter.getSnapshots().getSnapshot(i).getLong("viewcount");
+
+
                 StorageReference profileRef = storageReference.child("Items/" + docId  + "/image0");
                 profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
@@ -80,7 +82,8 @@ public class Tab2Fragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(v.getContext(), ItemDetail.class);
-                        i.putExtra("viewcount",String.valueOf(view));
+                        i.putExtra("viewcount",String.valueOf(item.getViewcount()));
+                        i.putExtra("owner",item.getOwner());
                         i.putExtra("title", item.getTitle());
                         i.putExtra("price", item.getPrice());
                         i.putExtra("content", item.getContent());

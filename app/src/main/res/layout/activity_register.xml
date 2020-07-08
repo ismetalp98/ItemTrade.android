@@ -21,13 +21,12 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:id="@+id/tv_reg_email_layout"
         app:errorEnabled="true"
         android:layout_width="329dp"
         android:layout_height="56dp"
         android:hint="Email"
-        app:boxBackgroundMode="outline"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,13 +40,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:id="@+id/tv_reg_name_layout"
         app:errorEnabled="true"
         android:layout_width="329dp"
         android:layout_height="56dp"
         android:hint="First Name"
-        app:boxBackgroundMode="outline"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.463"
@@ -62,13 +60,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="329dp"
         android:layout_height="56dp"
         android:id="@+id/tv_reg_lastname_layout"
         app:errorEnabled="true"
         android:hint="Last Name"
-        app:boxBackgroundMode="outline"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.463"
@@ -84,12 +81,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tv_reg_pss_layout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="329dp"
         android:layout_height="56dp"
         android:hint="Password"
         app:errorEnabled="true"
-        app:boxBackgroundMode="outline"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:endIconMode="password_toggle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,9 +129,9 @@
         app:layout_constraintTop_toBottomOf="@+id/reg_btn"
         app:layout_constraintVertical_bias="1.0" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/reg_btn"
-        style="@style/Widget.AppCompat.Light.ActionButton"
+        style="@style/Widget.App.Button"
         android:layout_width="323dp"
         android:layout_height="77dp"
         android:layout_marginBottom="36dp"

@@ -35,11 +35,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="app.anchorapp.bilkentacm.MainActivity" />
+        <activity android:name="app.anchorapp.bilkentacm.activities.MainActivity" />
         <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Register" />
-        <activity android:name="app.anchorapp.bilkentacm.fragments.AddItem" />
-        <activity android:name="app.anchorapp.bilkentacm.fragments.ItemDetail" />
-        <activity android:name="app.anchorapp.bilkentacm.fragments.Message" />
+        <activity android:name="app.anchorapp.bilkentacm.activities.AddItem" />
+        <activity android:name="app.anchorapp.bilkentacm.activities.ItemDetail" />
+        <activity android:name="app.anchorapp.bilkentacm.activities.Message" />
         <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Login" />
 
         <provider

@@ -5,14 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.AddItem">
+    tools:context=".activities.AddItem">
 
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/additem_toolbar"
             android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
             android:elevation="12dp"
-            android:layout_height="?attr/actionBarSize" />
+            android:background="#D5ECEFF1" />
 
     <HorizontalScrollView
         android:id="@+id/additem_recylerview"
@@ -32,7 +33,6 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:scrollbars="none"
-
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -46,7 +46,6 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextField"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name"
@@ -64,7 +63,6 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextField1"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -81,7 +79,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextField2"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -100,7 +98,6 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/additem_catagory"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -118,11 +115,13 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                style="@style/Widget.App.Button"
                 android:id="@+id/btn_additem_add"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="50dp"
                 android:text="Next"
+                android:textColor="#fff"
                 android:textSize="24sp"/>
         </LinearLayout>
 

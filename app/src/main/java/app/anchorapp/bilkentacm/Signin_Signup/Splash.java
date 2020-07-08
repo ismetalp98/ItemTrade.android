@@ -3,12 +3,10 @@ package app.anchorapp.bilkentacm.Signin_Signup;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.anchorapp.bilkentacm.MainActivity;
 import app.anchorapp.bilkentacm.R;
 
 public class Splash extends AppCompatActivity {

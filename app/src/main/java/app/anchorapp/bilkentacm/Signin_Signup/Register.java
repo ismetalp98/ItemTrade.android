@@ -17,6 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -87,7 +88,12 @@ public class Register extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 final FirebaseUser fuser = fAuth.getCurrentUser();
-                                fuser.sendEmailVerification();
+                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                        .setDisplayName(loginname + " " + loginlastname)
+                                        .build();
+
+                                fuser.updateProfile(profileUpdates);
+
                                 HashMap<String, Object> user = new HashMap<>();
                                 user.put("name", loginname);
                                 user.put("lastname", loginlastname);

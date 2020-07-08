@@ -3,10 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ProfileFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/profile_tabs"
+        app:tabIndicatorColor="#B00020"
+        app:tabSelectedTextColor="#B00020"
+        app:tabRippleColor="#bd4843"
+        android:backgroundTint="#cfd8dc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">

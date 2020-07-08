@@ -2,14 +2,13 @@ package app.anchorapp.bilkentacm.fragments;
 
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -64,9 +63,10 @@ public class ProfileFragment extends Fragment {
     public void setUpViewPager(ViewPager viewpager)
     {
         TabLayoutAdapter adapter = new TabLayoutAdapter(getChildFragmentManager());
-        adapter.addFragment(new Tab1Fragment(),"Tab1");
-        adapter.addFragment(new Tab2Fragment(),"Tab2");
-        adapter.addFragment(new Tab3Fragment(),"Tab3");
+        adapter.addFragment(new Tab1Fragment(),"Contacts");
+        adapter.addFragment(new Tab2Fragment(),"My     Items");
+        adapter.addFragment(new Tab4Fragment(),"My Favorites");
+        adapter.addFragment(new Tab3Fragment(),"My Profile");
 
         viewpager.setAdapter(adapter);
     }

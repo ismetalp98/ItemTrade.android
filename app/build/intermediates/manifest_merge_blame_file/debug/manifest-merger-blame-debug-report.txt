@@ -68,21 +68,21 @@
 35-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:20:27-74
 36            </intent-filter>
 37        </activity>
-38        <activity android:name="app.anchorapp.bilkentacm.MainActivity" />
-38-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:23:9-50
-38-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:23:19-47
+38        <activity android:name="app.anchorapp.bilkentacm.activities.MainActivity" />
+38-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:23:9-61
+38-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:23:19-58
 39        <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Register" />
 39-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:24:9-60
 39-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:24:19-57
-40        <activity android:name="app.anchorapp.bilkentacm.fragments.AddItem" />
-40-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:25:9-54
-40-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:25:19-52
-41        <activity android:name="app.anchorapp.bilkentacm.fragments.ItemDetail" />
-41-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:26:9-58
-41-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:26:19-55
-42        <activity android:name="app.anchorapp.bilkentacm.fragments.Message" />
-42-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:27:9-55
-42-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:27:19-52
+40        <activity android:name="app.anchorapp.bilkentacm.activities.AddItem" />
+40-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:25:9-55
+40-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:25:19-53
+41        <activity android:name="app.anchorapp.bilkentacm.activities.ItemDetail" />
+41-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:26:9-59
+41-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:26:19-56
+42        <activity android:name="app.anchorapp.bilkentacm.activities.Message" />
+42-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:27:9-56
+42-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:27:19-53
 43        <activity android:name="app.anchorapp.bilkentacm.Signin_Signup.Login" />
 43-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:28:9-57
 43-->C:\GitHub\asd\app\src\main\AndroidManifest.xml:28:19-54

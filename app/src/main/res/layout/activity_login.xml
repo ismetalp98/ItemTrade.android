@@ -21,32 +21,29 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:id="@+id/loginmaillayout"
         android:layout_width="329dp"
-        app:errorEnabled="true"
         android:layout_height="71dp"
-        android:hint="E Mail"
-        app:boxBackgroundMode="outline"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="E-mail"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintBottom_toTopOf="@+id/loginpsslayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView"
-        app:layout_constraintVertical_bias="0.211">
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tv_email"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginpsslayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="329dp"
         android:layout_height="71dp"
         android:hint="Password"
-        app:boxBackgroundMode="outline"
+        android:theme="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:endIconMode="password_toggle"
         app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -90,9 +87,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.498" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login"
-        style="@style/Widget.AppCompat.Light.ActionButton"
+        style="@style/Widget.App.Button"
         android:layout_width="323dp"
         android:layout_height="77dp"
         android:layout_marginBottom="40dp"

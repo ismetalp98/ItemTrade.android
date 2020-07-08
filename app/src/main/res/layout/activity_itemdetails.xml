@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <RelativeLayout
@@ -12,16 +12,16 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:id="@+id/itemdetail_toolbar"
-
+        android:background="#D5ECEFF1"
         android:layout_height="?attr/actionBarSize"
-        android:elevation="12dp"/>
+        android:elevation="9dp"/>
 
     <ImageView
         android:id="@+id/itemdetail_photos"
         android:layout_width="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_height="180dp"
+        android:layout_height="220dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:layout_marginTop="74dp" >
@@ -29,13 +29,28 @@
 
     <TextView
         android:id="@+id/itemdetail_price"
-        android:layout_width="90dp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
         android:layout_below="@id/itemdetail_photos"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="26sp"
+        android:text="124"
+        android:gravity="end"
+        android:layout_marginEnd="50dp"
         android:layout_marginRight="19dp" />
+
+        <TextView
+            android:text="₺"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/itemdetail_photos"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="74dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="28sp" />
 
     <TextView
         android:id="@+id/itemdetail_title"
@@ -44,13 +59,14 @@
         android:layout_marginEnd="20dp"
         android:layout_below="@id/itemdetail_photos"
         android:layout_marginStart="20dp"
-        android:textSize="18sp"
+        android:textSize="28sp"
+        android:fontFamily="@font/poppins_medium"
         android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/itemdetail_content"
             android:layout_width="373dp"
-            android:layout_height="198dp"
+            android:layout_height="180dp"
             android:layout_below="@id/itemdetail_price"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
@@ -77,6 +93,8 @@
         android:layout_marginStart="20dp" />
 
     <Button
+        android:visibility="invisible"
+        style="@style/Widget.App.Button.fav"
         android:id="@+id/itemdetail_fav"
         android:layout_width="48dp"
         android:onClick="setAddFav"
@@ -86,14 +104,23 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="41dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/itemdetail_sendMessage"
-            android:onClick="sendMessage"
-            android:layout_width="240dp"
-            android:layout_height="64dp"
+            style="@style/Widget.App.Button.message"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
             android:layout_below="@id/itemdetail_content"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="77dp" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="80dp"
+            android:onClick="sendMessage"
+            android:text="Buy Item"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:iconSize="40dp"
+            app:iconTint="#FFFFFF" />
     </RelativeLayout>
 
 </ScrollView>

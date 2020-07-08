@@ -20,11 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
         <activity android:name=".Signin_Signup.Register" />
-        <activity android:name=".fragments.AddItem"/>
-        <activity android:name=".fragments.ItemDetail" />
-        <activity android:name=".fragments.Message" />
+        <activity android:name=".activities.AddItem"/>
+        <activity android:name=".activities.ItemDetail" />
+        <activity android:name=".activities.Message" />
         <activity android:name=".Signin_Signup.Login" />
         <provider
             android:name="androidx.core.content.FileProvider"

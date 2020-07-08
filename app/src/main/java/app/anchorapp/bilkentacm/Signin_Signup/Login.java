@@ -3,7 +3,6 @@ package app.anchorapp.bilkentacm.Signin_Signup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import app.anchorapp.bilkentacm.MainActivity;
+import app.anchorapp.bilkentacm.activities.MainActivity;
 import app.anchorapp.bilkentacm.R;
 
 public class Login extends AppCompatActivity {

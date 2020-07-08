@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="search"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/toolbar_idle"
+        android:icon="@drawable/bg_nav_tasks"
+        android:title="Tasksss"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/toolbar_logout"
+        android:title="Logout"
+        app:showAsAction="never"/>
+
+</menu>

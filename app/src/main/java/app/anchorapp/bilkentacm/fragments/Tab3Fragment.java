@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -39,12 +40,11 @@ import app.anchorapp.bilkentacm.R;
 
 public class Tab3Fragment extends Fragment {
 
-    public static boolean control;
+
     ImageView profileimage;
-    TextView name,mail,phonenumber;
-    TextView warning,notification;
-    String nametoedit,lastnametoedit;
-    Button change,edit;
+    TextView name, mail, phonenumber;
+    String nametoedit, lastnametoedit;
+    Button change, edit;
     FirebaseAuth fauth;
     ImageButton btnaddphonenumber;
     Button btnverifiy;
@@ -75,9 +75,6 @@ public class Tab3Fragment extends Fragment {
         change = view.findViewById(R.id.btnchangepss);
         edit = view.findViewById(R.id.btneditprofile);
         profilepicbtn = view.findViewById(R.id.propic);
-        warning = view.findViewById(R.id.tv_warning);
-        notification = view.findViewById(R.id.tv_notification);
-        btnverifiy = view.findViewById(R.id.btn_verify);
         fauth = FirebaseAuth.getInstance();
         fuser = fauth.getCurrentUser();
         fStore = FirebaseFirestore.getInstance();
@@ -99,32 +96,13 @@ public class Tab3Fragment extends Fragment {
             }
         });
 
-
-            StorageReference profileRef = storageReference.child("users/" + fuser.getUid() + "/profile.jpg");
-
-            profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    Picasso.get().load(uri).into(profileimage);
-                }
-            });
-
-        /*if (control)
-        {
-            warning.setVisibility(View.INVISIBLE);
-            notification.setVisibility(View.INVISIBLE);
-            btnverifiy.setVisibility(View.INVISIBLE);
-            btnverifiy.setClickable(false);
-        }*/
-
-
-        btnverifiy.setOnClickListener(new View.OnClickListener() {
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+        storageReference.child("Users/"+fuser.getUid()+"/profile.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
-            public void onClick(View view) {
-                fuser.sendEmailVerification();
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileimage);
             }
         });
-
 
         ////// Button Listeners//////////
         profilepicbtn.setOnClickListener(new View.OnClickListener() {
@@ -145,12 +123,9 @@ public class Tab3Fragment extends Fragment {
                 phonenumberdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+
                         String phone_number = newphonenumber.getText().toString();
-                        DocumentReference documentReference1 = fStore.collection("Users").document(fuser.getUid());
                         HashMap<String, Object> edited = new HashMap<>();
-                        edited.put("name", nametoedit);
-                        edited.put("lastname", lastnametoedit);
-                        edited.put("email", mail.getText().toString());
                         edited.put("phonenumber", phone_number);
                         documentReference.update(edited);
                     }
@@ -168,19 +143,9 @@ public class Tab3Fragment extends Fragment {
         if (requestCode == GALLERY_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 final Uri contentUri = data.getData();
-                profileimage.setImageURI((contentUri));
-                final StorageReference str = storageReference.child("users/"+fuser.getUid()+"/profile.jpg");
-                str.putFile(contentUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        str.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                Picasso.get().load(uri).into(profileimage);
-                            }
-                        });
-                    }
-                });
+                Picasso.get().load(contentUri).into(profileimage);
+                final StorageReference str = storageReference.child("Users/"+fuser.getUid()+"/profile.jpg");
+                str.putFile(contentUri);
             }
         }
     }
