@@ -1,16 +1,23 @@
 package app.anchorapp.bilkentacm.models;
 
 import android.media.Image;
+import android.net.Uri;
 
 public class Item {
 
-    String title,content,price,owner,ownername;
-    Image photo;
+    String title,content,price,owner,ownername,itemId;
+    Uri photo;
     long viewcount;
+    Item item;
 
     public Item() { }
 
-    public Item(String title, String content, String price, String owner, String ownername, Image photo, long viewcount) {
+    public Item(Item item, String itemId) {
+        this.item = item;
+        this.itemId = itemId;
+    }
+
+    public Item(String title, String content, String price, String owner, String ownername, Uri photo, long viewcount) {
         this.title = title;
         this.content = content;
         this.price = price;
@@ -60,11 +67,11 @@ public class Item {
         this.ownername = ownername;
     }
 
-    public Image getPhoto() {
+    public Uri getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Image photo) {
+    public void setPhoto(Uri photo) {
         this.photo = photo;
     }
 
@@ -74,5 +81,21 @@ public class Item {
 
     public void setViewcount(long viewcount) {
         this.viewcount = viewcount;
+    }
+
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

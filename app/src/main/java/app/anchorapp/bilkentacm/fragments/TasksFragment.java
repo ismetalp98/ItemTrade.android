@@ -2,14 +2,13 @@ package app.anchorapp.bilkentacm.fragments;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -17,26 +16,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import app.anchorapp.bilkentacm.R;
 import app.anchorapp.bilkentacm.Signin_Signup.Login;
 import app.anchorapp.bilkentacm.activities.AddItem;
-import app.anchorapp.bilkentacm.activities.ItemDetail;
+import app.anchorapp.bilkentacm.adapters.ItemAdapter;
 import app.anchorapp.bilkentacm.models.Item;
 
 /**
@@ -47,11 +41,11 @@ public class TasksFragment extends Fragment {
     private FirebaseAuth fauth;
     private ExtendedFloatingActionButton fab;
     private Toolbar toolbar;
-    FirestoreRecyclerAdapter<Item, ItemViewHolder> noteAdapter;
+    //FirestoreRecyclerAdapter<Item, ItemViewHolder> noteAdapter;
     RecyclerView itemList;
     FirebaseFirestore fStore;
-    FirebaseUser fUser;
-    StorageReference storageReference;
+    List<Item> mItems;
+
 
     public TasksFragment() {
         // Required empty public constructor
@@ -67,11 +61,9 @@ public class TasksFragment extends Fragment {
         fauth = FirebaseAuth.getInstance();
         itemList = view.findViewById(R.id.itemList);
         fStore = FirebaseFirestore.getInstance();
-        fauth = FirebaseAuth.getInstance();
-        fUser = fauth.getCurrentUser();
-        storageReference = FirebaseStorage.getInstance().getReference();
-
-        searchItems();
+        itemList.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        mItems = new ArrayList<>();
+        searchItems("");
 
 
 
@@ -81,14 +73,27 @@ public class TasksFragment extends Fragment {
         toolbar = view.findViewById(R.id.main_toolbar);
         toolbar.setTitle("Home page");
         toolbar.inflateMenu(R.menu.app_bar_menu);
+        Menu menu = toolbar.getMenu();
+        MenuItem menuItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                searchItems(s);
+                return false;
+            }
+        });
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId())
                 {
-                    case R.id.search:
-
-                        break;
                     case  R.id.toolbar_logout:
                         fauth.signOut();;
                         getActivity().finish();
@@ -112,10 +117,24 @@ public class TasksFragment extends Fragment {
 
 
 
-    public void searchItems()
-    {
+    public void searchItems(final String key) {
 
-        Query query = fStore.collection("Items").orderBy("title");
+        fStore.collection("Items").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                for (final DocumentSnapshot snapshot : task.getResult()) {
+                    Item asd = snapshot.toObject(Item.class);
+                    Item item = new Item(asd, snapshot.getId());
+                    if (asd.getTitle().contains(key)) {
+                        mItems.add(item);
+                    }
+                    ItemAdapter itemAdapter = new ItemAdapter(mItems, getContext());
+
+                    itemList.setAdapter(itemAdapter);
+                }
+            }
+        });
+        /*Query query = fStore.collection("Items").orderBy("title");
         FirestoreRecyclerOptions<Item> allNotes = new FirestoreRecyclerOptions.Builder<Item>()
                 .setQuery(query,Item.class)
                 .build();
@@ -166,10 +185,10 @@ public class TasksFragment extends Fragment {
 
 
         itemList.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-        itemList.setAdapter(noteAdapter);
+        itemList.setAdapter(noteAdapter);*/
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
+    /*public class ItemViewHolder extends RecyclerView.ViewHolder{
         public TextView noteTitle;
         View view;
         ImageView imageView;
@@ -181,9 +200,9 @@ public class TasksFragment extends Fragment {
             imageView = itemView.findViewById(R.id.cardview_photo);
             view = itemView;
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void onStart() {
         super.onStart();
         noteAdapter.startListening();
@@ -195,5 +214,5 @@ public class TasksFragment extends Fragment {
         if (noteAdapter != null) {
             noteAdapter.stopListening();
         }
-    }
+    }*/
 }

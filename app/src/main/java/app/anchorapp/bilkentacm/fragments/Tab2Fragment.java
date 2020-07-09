@@ -1,8 +1,11 @@
 package app.anchorapp.bilkentacm.fragments;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -89,6 +93,21 @@ public class Tab2Fragment extends Fragment {
                         i.putExtra("content", item.getContent());
                         i.putExtra("itemId", docId);
                         v.getContext().startActivity(i);
+                    }
+                });
+                itemViewHolder.view.setOnLongClickListener(new View.OnLongClickListener() {
+                    @SuppressLint("ResourceType")
+                    @Override
+                    public boolean onLongClick(View view) {
+                        new MaterialAlertDialogBuilder(getContext())
+                                .setCancelable(true)
+                                .setPositiveButton("Delete Item", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                    }
+                                })
+                                .show();
+                        return false;
                     }
                 });
             }
