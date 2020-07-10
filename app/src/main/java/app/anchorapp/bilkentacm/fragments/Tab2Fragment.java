@@ -60,8 +60,8 @@ public class Tab2Fragment extends Fragment {
         storageReference = FirebaseStorage.getInstance().getReference();
 
 
-        Query query = fStore.collection("Users").document(user.getUid()).collection("myItems").orderBy("title");
-        FirestoreRecyclerOptions<Item> allNotes = new FirestoreRecyclerOptions.Builder<Item>()
+        final Query query = fStore.collection("Users").document(user.getUid()).collection("myItems").orderBy("title");
+        final FirestoreRecyclerOptions<Item> allNotes = new FirestoreRecyclerOptions.Builder<Item>()
                 .setQuery(query,Item.class)
                 .build();
 
@@ -99,11 +99,16 @@ public class Tab2Fragment extends Fragment {
                     @SuppressLint("ResourceType")
                     @Override
                     public boolean onLongClick(View view) {
+                        String[] list = {"Delete"};
                         new MaterialAlertDialogBuilder(getContext())
-                                .setCancelable(true)
-                                .setPositiveButton("Delete Item", new DialogInterface.OnClickListener() {
+                                .setItems(list, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
+                                        if (i == 0)
+                                        {
+                                            noteAdapter.getSnapshots().getSnapshot(i).getReference().delete();
+                                            fStore.collection("Items").document(docId).delete();
+                                        }
                                     }
                                 })
                                 .show();

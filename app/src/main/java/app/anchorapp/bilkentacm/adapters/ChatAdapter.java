@@ -56,10 +56,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
 
         Chat chat = mChat.get(position);
         holder.show_message.setText(chat.getMessage());
-
-        Date date = new Date(chat.getSendtime());
+        Date date = new Date(chat.getSendtime() + 3600000*3);
         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
-        format.setTimeZone(TimeZone.getTimeZone("UTC"));
         holder.message_time.setText(format.format(date));
     }
 

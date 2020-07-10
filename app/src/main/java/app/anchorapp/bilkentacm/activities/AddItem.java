@@ -152,6 +152,7 @@ public class AddItem extends AppCompatActivity {
                     Uri content = images.get(i);
                     uploadImageToFirebase("image" + i, content);
                 }
+                finish();
             }
         });
     }

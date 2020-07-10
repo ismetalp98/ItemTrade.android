@@ -66,8 +66,6 @@ public class TasksFragment extends Fragment {
         searchItems("");
 
 
-
-
         //Set toolbar
 
         toolbar = view.findViewById(R.id.main_toolbar);
@@ -118,10 +116,10 @@ public class TasksFragment extends Fragment {
 
 
     public void searchItems(final String key) {
-
         fStore.collection("Items").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                mItems.clear();
                 for (final DocumentSnapshot snapshot : task.getResult()) {
                     Item asd = snapshot.toObject(Item.class);
                     Item item = new Item(asd, snapshot.getId());

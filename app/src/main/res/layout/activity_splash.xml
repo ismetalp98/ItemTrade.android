@@ -8,11 +8,10 @@
 
     <TextView
         android:id="@+id/logoTitle"
-        android:layout_width="258dp"
-        android:layout_height="64dp"
-        android:shadowColor="#2FB399"
-        android:text="This is Trying"
-        android:textColor="@color/design_default_color_secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EU Satıs App"
+        android:textColor="#B00020"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +21,14 @@
 
     <ProgressBar
         android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
         android:layout_width="77dp"
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoTitle"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="0.784"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="#B00020"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

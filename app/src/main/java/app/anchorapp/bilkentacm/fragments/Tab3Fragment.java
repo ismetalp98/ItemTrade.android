@@ -42,10 +42,8 @@ public class Tab3Fragment extends Fragment {
     ImageView profileimage;
     TextView name, mail, phonenumber;
     String nametoedit, lastnametoedit;
-    Button change, edit;
     FirebaseAuth fauth;
     ImageButton btnaddphonenumber;
-    Button btnverifiy;
     FirebaseFirestore fStore;
     ImageButton profilepicbtn;
     StorageReference storageReference;
@@ -70,8 +68,6 @@ public class Tab3Fragment extends Fragment {
         mail = view.findViewById(R.id.tw_mail);
         btnaddphonenumber = view.findViewById(R.id.btn_add_phonenumber);
         phonenumber = view.findViewById(R.id.tw_phone);
-        change = view.findViewById(R.id.btnchangepss);
-        edit = view.findViewById(R.id.btneditprofile);
         profilepicbtn = view.findViewById(R.id.propic);
         fauth = FirebaseAuth.getInstance();
         fuser = fauth.getCurrentUser();
