@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void hideSystemUI() {
+    /*private void hideSystemUI() {
         // Enables regular immersive mode.
         // For "lean back" mode, remove SYSTEM_UI_FLAG_IMMERSIVE.
         // Or for "sticky immersive," replace it with SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         hideSystemUI();
-    }
+    }*/
 
 
 

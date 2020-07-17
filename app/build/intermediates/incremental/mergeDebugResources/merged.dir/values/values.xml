@@ -867,6 +867,7 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="firebase_database_url" translatable="false">https://bilkent-acm.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">46365317564</string>
     <string name="google_api_key" translatable="false">AIzaSyB7pqInuurHdHcyppq68Zl15iLBdGNkl3s</string>

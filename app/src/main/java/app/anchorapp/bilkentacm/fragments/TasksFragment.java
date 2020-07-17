@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -45,6 +46,7 @@ public class TasksFragment extends Fragment {
     RecyclerView itemList;
     FirebaseFirestore fStore;
     List<Item> mItems;
+    SwipeRefreshLayout swipeRefreshLayout;
 
 
     public TasksFragment() {
@@ -60,6 +62,7 @@ public class TasksFragment extends Fragment {
         fab = view.findViewById(R.id.task_fab);
         fauth = FirebaseAuth.getInstance();
         itemList = view.findViewById(R.id.itemList);
+        swipeRefreshLayout = view.findViewById(R.id.swiperefresh);
         fStore = FirebaseFirestore.getInstance();
         itemList.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         mItems = new ArrayList<>();
@@ -110,26 +113,34 @@ public class TasksFragment extends Fragment {
             }
         });
 
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                searchItems("");
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
         return view;
     }
 
 
 
     public void searchItems(final String key) {
+        mItems.clear();
         fStore.collection("Items").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                mItems.clear();
                 for (final DocumentSnapshot snapshot : task.getResult()) {
                     Item asd = snapshot.toObject(Item.class);
                     Item item = new Item(asd, snapshot.getId());
                     if (asd.getTitle().contains(key)) {
                         mItems.add(item);
                     }
-                    ItemAdapter itemAdapter = new ItemAdapter(mItems, getContext());
-
-                    itemList.setAdapter(itemAdapter);
                 }
+                ItemAdapter itemAdapter = new ItemAdapter(mItems, getContext());
+                itemList.setAdapter(itemAdapter);
             }
         });
         /*Query query = fStore.collection("Items").orderBy("title");

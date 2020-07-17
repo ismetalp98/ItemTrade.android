@@ -16,9 +16,13 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.iid.FirebaseInstanceId;
 
+import app.anchorapp.bilkentacm.Notification.Token;
 import app.anchorapp.bilkentacm.R;
 import app.anchorapp.bilkentacm.activities.Message;
 import app.anchorapp.bilkentacm.models.Contact;
@@ -80,7 +84,15 @@ public class Tab1Fragment extends Fragment {
 
         contactList.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
         contactList.setAdapter(noteAdapter);
+        updateToken(FirebaseInstanceId.getInstance().getToken());
         return view;
+    }
+
+    private void updateToken(String token)
+    {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Tokens");
+        Token token1 = new Token(token);
+        databaseReference.child(user.getUid()).setValue(token1);
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{

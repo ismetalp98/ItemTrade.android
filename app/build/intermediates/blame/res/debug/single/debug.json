@@ -92,16 +92,8 @@
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\fragment_tab2.xml"
     },
     {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_black.ttf.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\font\\roboto_black.ttf"
-    },
-    {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_blackreal_24dp.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable\\ic_add_blackreal_24dp.xml"
-    },
-    {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\font_raleway_medium.ttf.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\font\\raleway_medium.ttf"
     },
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -112,20 +104,16 @@
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\font\\poppins_medium.ttf"
     },
     {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_message.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\activity_message.xml"
     },
     {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_message_time_layout.xml.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable\\message_time_layout.xml"
+        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\font_raleway.ttf.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\font\\raleway.ttf"
+        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_message_time_layout.xml.flat",
+        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable\\message_time_layout.xml"
     },
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",

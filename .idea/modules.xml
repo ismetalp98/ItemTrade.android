@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Bilkent ACM.iml" filepath="$PROJECT_DIR$/Bilkent ACM.iml" group="Bilkent ACM" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Bilkent ACM/app" />
+      <module fileurl="file://$PROJECT_DIR$/EU Sell.iml" filepath="$PROJECT_DIR$/EU Sell.iml" group="EU Sell" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="EU Sell/app" />
     </modules>
   </component>
 </project>

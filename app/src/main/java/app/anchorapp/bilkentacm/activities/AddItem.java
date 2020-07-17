@@ -28,7 +28,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -71,6 +73,7 @@ public class AddItem extends AppCompatActivity {
     List<Uri> images;
     String itemId;
     String selection;
+    boolean isimageused = false;
 
 
     @Override
@@ -131,28 +134,36 @@ public class AddItem extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String titleToAdd = title.getText().toString();
-                String contentToAdd = content.getText().toString();
-                String priceToAdd = price.getText().toString();
-                HashMap<String, Object> item = new HashMap<>();
-                item.put("title", titleToAdd);
-                item.put("content", contentToAdd);
-                item.put("price", priceToAdd);
-                item.put("viewcount", 0);
-                item.put("catagory", selection);
-                item.put("owner", fUser.getUid());
-                item.put("ownername", fUser.getDisplayName());
-                DocumentReference documentReference = fStore.collection("Items").document();
-                itemId = documentReference.getId();
-                DocumentReference documentReference_user = fStore.collection("Users").document(fUser.getUid()).collection("myItems").document(itemId);
-                documentReference.set(item);
-                documentReference_user.set(item);
+                if (!isimageused)
+                    System.out.println("asd");
+                else {
+                    String titleToAdd = title.getText().toString();
+                    String contentToAdd = content.getText().toString();
+                    String priceToAdd = price.getText().toString();
+                    HashMap<String, Object> item = new HashMap<>();
+                    item.put("title", titleToAdd);
+                    item.put("content", contentToAdd);
+                    item.put("price", priceToAdd);
+                    item.put("viewcount", 0);
+                    item.put("catagory", selection);
+                    item.put("owner", fUser.getUid());
+                    item.put("ownername", fUser.getDisplayName());
+                    DocumentReference documentReference = fStore.collection("Items").document();
+                    itemId = documentReference.getId();
+                    DocumentReference documentReference_user = fStore.collection("Users").document(fUser.getUid()).collection("myItems").document(itemId);
+                    documentReference.set(item);
+                    documentReference_user.set(item).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            finish();
+                        }
+                    });
 
-                for (int i = 0; i < images.size(); i++) {
-                    Uri content = images.get(i);
-                    uploadImageToFirebase("image" + i, content);
+                    for (int i = 0; i < images.size(); i++) {
+                        Uri content = images.get(i);
+                        uploadImageToFirebase("image" + i, content);
+                    }
                 }
-                finish();
             }
         });
     }
@@ -162,7 +173,6 @@ public class AddItem extends AppCompatActivity {
         for (int i = 0; i < 6; i++) {
             if (view.equals(gallery.getChildAt(i))) {
                 view1 = (ImageView) gallery.getChildAt(i);
-
                 new MaterialAlertDialogBuilder(AddItem.this)
                         .setTitle("Title")
                         .setNegativeButton("Camera", new DialogInterface.OnClickListener() {
@@ -227,6 +237,7 @@ public class AddItem extends AppCompatActivity {
                 images.add(contentUri);
             }
         }
+        isimageused = true;
     }
 
     private void uploadImageToFirebase(String name, Uri contentUri) {
