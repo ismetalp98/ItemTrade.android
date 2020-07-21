@@ -17,9 +17,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/message_left_layout"
             android:maxWidth="260dp"
-            android:paddingEnd="18dp"
-            android:text="TextView  aaaa"
-            android:textSize="22sp" />
+            android:paddingEnd="30dp"
+            android:minWidth="30dp"
+            android:text="a"
+            android:textSize="16sp" />
 
 
         <TextView

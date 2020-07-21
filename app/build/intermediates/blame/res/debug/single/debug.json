@@ -40,12 +40,12 @@
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_additem_photos.xml.flat",
-        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\additem_photos.xml"
-    },
-    {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_item_cardview.xml.flat",
         "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\item_item_cardview.xml"
+    },
+    {
+        "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\layout_additem_photos.xml.flat",
+        "source": "C:\\GitHub\\asd\\app\\src\\main\\res\\layout\\additem_photos.xml"
     },
     {
         "merged": "C:\\GitHub\\asd\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_red_eye_black_24dp.xml.flat",

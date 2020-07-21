@@ -19,8 +19,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/message_right_layout"
             android:maxWidth="260dp"
+            android:minWidth="30dp"
             android:paddingEnd="18dp"
-            android:textSize="22sp" />
+            android:textSize="16sp" />
 
 
         <TextView

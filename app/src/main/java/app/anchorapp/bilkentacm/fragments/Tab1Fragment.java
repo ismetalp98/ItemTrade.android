@@ -1,5 +1,6 @@
 package app.anchorapp.bilkentacm.fragments;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,13 +15,18 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.storage.StorageReference;
+
+import java.lang.ref.Reference;
 
 import app.anchorapp.bilkentacm.Notification.Token;
 import app.anchorapp.bilkentacm.R;
@@ -51,7 +57,7 @@ public class Tab1Fragment extends Fragment {
         user = fauth.getCurrentUser();
 
 
-        Query query = fStore.collection("Users").document(user.getUid()).collection("myChats").orderBy("lastupdate");
+        Query query = fStore.collection("Users").document(user.getUid()).collection("myChats").orderBy("lastupdate", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Contact> allNotes = new FirestoreRecyclerOptions.Builder<Contact>()
                 .setQuery(query,Contact.class)
                 .build();
@@ -61,14 +67,38 @@ public class Tab1Fragment extends Fragment {
             @Override
             public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Contact contact) {
                 itemViewHolder.reciever.setText(contact.getRecievername());
+                final String chatId = contact.getChatId();
                 itemViewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent i = new Intent(v.getContext(), Message.class);
                         i.putExtra("owner",contact.getReciever());
                         i.putExtra("recievername",contact.getRecievername());
-                        i.putExtra("chatId",contact.getChatId());
+                        i.putExtra("chatId",chatId);
                         v.getContext().startActivity(i);
+                    }
+                });
+                itemViewHolder.view.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        final DocumentReference ref =  noteAdapter.getSnapshots().getSnapshot(i).getReference();
+                        final DocumentReference refrec =  fStore.collection("Users").document(contact.getReciever()).collection("myChats").document(chatId);
+                        final DatabaseReference chat  = FirebaseDatabase.getInstance().getReference("Chats").child(chatId);
+                        String[] list = {"Delete"};
+                        new MaterialAlertDialogBuilder(getContext())
+                                .setItems(list, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        if (i == 0)
+                                        {
+                                            ref.delete();
+                                            refrec.delete();
+                                            chat.removeValue();
+                                        }
+                                    }
+                                })
+                                .show();
+                        return false;
                     }
                 });
             }
