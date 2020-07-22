@@ -3,10 +3,15 @@
 
     <item
         android:id="@+id/search"
-        android:icon="@drawable/ic_search_black_24dp"
         android:title="search"
         app:showAsAction="always"
         app:actionViewClass="android.widget.SearchView" />
+
+    <item
+        android:id="@+id/speech"
+        android:icon="@drawable/ic_mic_none_black_24dp"
+        android:title="search"
+        app:showAsAction="always" />
 
 
     <item

@@ -1492,6 +1492,7 @@ drawable ic_favorite_border_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mail_black_24dp
+drawable ic_mic_none_black_24dp
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1861,6 +1862,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id speech
 id split_action_bar
 id spread
 id spread_inside

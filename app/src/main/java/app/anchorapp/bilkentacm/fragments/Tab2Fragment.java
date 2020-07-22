@@ -99,7 +99,7 @@ public class Tab2Fragment extends Fragment {
                     @SuppressLint("ResourceType")
                     @Override
                     public boolean onLongClick(View view) {
-                        String[] list = {"Delete"};
+                        String[] list = {"Delete","Update"};
                         new MaterialAlertDialogBuilder(getContext())
                                 .setItems(list, new DialogInterface.OnClickListener() {
                                     @Override
