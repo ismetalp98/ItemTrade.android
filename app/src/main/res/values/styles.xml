@@ -36,9 +36,9 @@
     </style>
 
     <style name="ThemeOverlay.App.Card" parent="">
-        <item name="colorPrimary">#FFF</item>
+        <item name="colorPrimary">#D5ECEFF1</item>
         <item name="colorSurface">#D5ECEFF1</item>
-        <item name="colorOnSurface">#FFF</item>
+        <item name="colorOnSurface">#D5ECEFF1</item>
 
     </style>
 

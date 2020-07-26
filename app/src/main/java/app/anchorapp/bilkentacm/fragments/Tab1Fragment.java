@@ -2,10 +2,12 @@ package app.anchorapp.bilkentacm.fragments;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,7 +27,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.lang.ref.Reference;
 
@@ -68,6 +73,15 @@ public class Tab1Fragment extends Fragment {
             public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Contact contact) {
                 itemViewHolder.reciever.setText(contact.getRecievername());
                 final String chatId = contact.getChatId();
+
+                StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+                storageReference.child("Users/"+contact.getReciever()+"/profile.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(itemViewHolder.imageView);
+                    }
+                });
+
                 itemViewHolder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -128,12 +142,13 @@ public class Tab1Fragment extends Fragment {
     public class ItemViewHolder extends RecyclerView.ViewHolder{
         TextView reciever;
         View view;
-        //ImageView imageView;
+        ImageView imageView;
 
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             reciever = itemView.findViewById(R.id.contact_reciever);
+            imageView = itemView.findViewById(R.id.contact_photo);
             view = itemView;
         }
     }

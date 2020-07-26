@@ -16,7 +16,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RZ8N22JXX4R" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -49,8 +49,8 @@
   </component>
   <component name="ProjectId" id="1ZSjcfmgow7W3SovtRrOcd4sc4a" />
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-10T23:38:34.516Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="RZ8N22JXX4R" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-25T15:59:38.928Z" />
     <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Pixel_3_API_29&#10;Pixel_3a_API_29" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Modules" />

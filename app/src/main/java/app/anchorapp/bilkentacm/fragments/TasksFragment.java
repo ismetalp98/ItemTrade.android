@@ -141,10 +141,10 @@ public class TasksFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RECOGNIZER_RESULT && requestCode == RESULT_OK)
+        if(requestCode == RECOGNIZER_RESULT && resultCode == RESULT_OK)
         {
             ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-
+            searchItems(matches.get(0));
         }
     }
 

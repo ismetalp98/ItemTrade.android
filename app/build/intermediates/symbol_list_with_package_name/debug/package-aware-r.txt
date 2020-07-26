@@ -1659,7 +1659,6 @@ id clip_horizontal
 id clip_vertical
 id collapseActionView
 id confirm_button
-id contact_message
 id contact_photo
 id contact_reciever
 id container

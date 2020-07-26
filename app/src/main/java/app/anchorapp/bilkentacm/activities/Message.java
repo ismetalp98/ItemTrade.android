@@ -2,6 +2,7 @@ package app.anchorapp.bilkentacm.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -94,6 +95,21 @@ public class Message extends AppCompatActivity {
                 notify = true;
                 SendMessage(fUser.getUid(),owner,message.getText().toString());
                 message.setText("");
+            }
+        });
+
+        message.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                if((keyEvent.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (i == KeyEvent.KEYCODE_ENTER))
+                {
+                    notify = true;
+                    SendMessage(fUser.getUid(),owner,message.getText().toString());
+                    message.setText("");
+                    return true;
+                }
+                return false;
             }
         });
 
