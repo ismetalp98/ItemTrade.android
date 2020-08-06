@@ -16,7 +16,7 @@
         android:id="@+id/cardview_photo"
         android:layout_width="match_parent"
         android:fitsSystemWindows="true"
-        android:layout_height="120dp"
+        android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop" />
 
@@ -24,12 +24,12 @@
         android:id="@+id/cardview_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/cardview_photo"
         android:layout_marginStart="10dp"
+        android:layout_alignBottom="@id/cardview_photo"
+        android:fontFamily="@font/poppins_medium"
         android:maxWidth="160dp"
         android:maxLines="1"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins"
-        android:layout_marginTop="10dp" />
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp" />
 </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

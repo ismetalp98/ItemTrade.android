@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,16 +36,18 @@ import java.lang.ref.Reference;
 
 import app.anchorapp.bilkentacm.Notification.Token;
 import app.anchorapp.bilkentacm.R;
+import app.anchorapp.bilkentacm.Resources.DatabseManager;
 import app.anchorapp.bilkentacm.activities.Message;
 import app.anchorapp.bilkentacm.models.Contact;
+import app.anchorapp.bilkentacm.models.Item;
 
 public class Tab1Fragment extends Fragment {
 
     RecyclerView contactList;
-    FirebaseFirestore fStore;
-    FirestoreRecyclerAdapter<Contact, ItemViewHolder> noteAdapter;
+    DatabseManager manager = new DatabseManager();
+    FirebaseRecyclerAdapter<Contact, DatabseManager.ItemViewHolderConversations> noteAdapter;
     FirebaseUser user;
-    private FirebaseAuth fauth;
+
 
     public Tab1Fragment() {
         // Required empty public constructor
@@ -56,74 +59,11 @@ public class Tab1Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tab1, container, false);
-        fauth = FirebaseAuth.getInstance();
         contactList = view.findViewById(R.id.myContacts);
-        fStore = FirebaseFirestore.getInstance();
-        user = fauth.getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
+        noteAdapter = manager.getConversations("Users/" + user.getUid() + "/conversations");
 
-        Query query = fStore.collection("Users").document(user.getUid()).collection("myChats").orderBy("lastupdate", Query.Direction.DESCENDING);
-        FirestoreRecyclerOptions<Contact> allNotes = new FirestoreRecyclerOptions.Builder<Contact>()
-                .setQuery(query,Contact.class)
-                .build();
-
-        noteAdapter = new FirestoreRecyclerAdapter<Contact, ItemViewHolder>(allNotes) {
-
-            @Override
-            public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Contact contact) {
-                itemViewHolder.reciever.setText(contact.getRecievername());
-                final String chatId = contact.getChatId();
-
-                StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-                storageReference.child("Users/"+contact.getReciever()+"/profile.jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(itemViewHolder.imageView);
-                    }
-                });
-
-                itemViewHolder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(v.getContext(), Message.class);
-                        i.putExtra("owner",contact.getReciever());
-                        i.putExtra("recievername",contact.getRecievername());
-                        i.putExtra("chatId",chatId);
-                        v.getContext().startActivity(i);
-                    }
-                });
-                itemViewHolder.view.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View view) {
-                        final DocumentReference ref =  noteAdapter.getSnapshots().getSnapshot(i).getReference();
-                        final DocumentReference refrec =  fStore.collection("Users").document(contact.getReciever()).collection("myChats").document(chatId);
-                        final DatabaseReference chat  = FirebaseDatabase.getInstance().getReference("Chats").child(chatId);
-                        String[] list = {"Delete"};
-                        new MaterialAlertDialogBuilder(getContext())
-                                .setItems(list, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        if (i == 0)
-                                        {
-                                            ref.delete();
-                                            refrec.delete();
-                                            chat.removeValue();
-                                        }
-                                    }
-                                })
-                                .show();
-                        return false;
-                    }
-                });
-            }
-
-            @NonNull
-            @Override
-            public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contact_cardview,parent,false);
-                return new ItemViewHolder(view);
-            }
-        };
 
 
         contactList.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
@@ -139,19 +79,6 @@ public class Tab1Fragment extends Fragment {
         databaseReference.child(user.getUid()).setValue(token1);
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
-        TextView reciever;
-        View view;
-        ImageView imageView;
-
-
-        public ItemViewHolder(@NonNull View itemView) {
-            super(itemView);
-            reciever = itemView.findViewById(R.id.contact_reciever);
-            imageView = itemView.findViewById(R.id.contact_photo);
-            view = itemView;
-        }
-    }
 
     @Override
     public void onStart() {

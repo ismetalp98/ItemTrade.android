@@ -3,28 +3,27 @@ package app.anchorapp.bilkentacm.models;
 import android.media.Image;
 import android.net.Uri;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Item {
 
-    String title,content,price,owner,ownername,itemId;
-    Uri photo;
-    long viewcount;
-    Item item;
+    String title,content,owner,ownername,itemId;
+    long price,viewcount;
+    HashMap<String,String> urls = new HashMap<>();
 
     public Item() { }
 
-    public Item(Item item, String itemId) {
-        this.item = item;
-        this.itemId = itemId;
-    }
 
-    public Item(String title, String content, String price, String owner, String ownername, Uri photo, long viewcount) {
+    public Item(String title, String content, String owner, String ownername, String itemId, long price, long viewcount, HashMap<String,String> urls) {
         this.title = title;
         this.content = content;
-        this.price = price;
         this.owner = owner;
         this.ownername = ownername;
-        this.photo = photo;
+        this.itemId = itemId;
+        this.price = price;
         this.viewcount = viewcount;
+        this.urls = urls;
     }
 
     public String getTitle() {
@@ -43,11 +42,11 @@ public class Item {
         this.content = content;
     }
 
-    public String getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -67,14 +66,6 @@ public class Item {
         this.ownername = ownername;
     }
 
-    public Uri getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(Uri photo) {
-        this.photo = photo;
-    }
-
     public long getViewcount() {
         return viewcount;
     }
@@ -91,11 +82,11 @@ public class Item {
         this.itemId = itemId;
     }
 
-    public Item getItem() {
-        return item;
+    public HashMap<String,String> getUrls() {
+        return urls;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setUrls(HashMap<String,String> urls) {
+        this.urls = urls;
     }
 }

@@ -17,30 +17,23 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
+
 
 import app.anchorapp.bilkentacm.R;
-import app.anchorapp.bilkentacm.activities.ItemDetail;
+import app.anchorapp.bilkentacm.Resources.DatabseManager;
+
 import app.anchorapp.bilkentacm.models.Item;
 
 public class Tab2Fragment extends Fragment {
 
-    FirestoreRecyclerAdapter<Item, ItemViewHolder> noteAdapter;
+    FirebaseRecyclerAdapter<Item, DatabseManager.ItemViewHolder> noteAdapter;
     RecyclerView itemList;
-    FirebaseFirestore fStore;
-    FirebaseUser user;
-    private FirebaseAuth fauth;
-    StorageReference storageReference;
+    DatabseManager databseManager = new DatabseManager();
+    FirebaseUser firebaseUser;
+
 
     public Tab2Fragment() {
         // Required empty public constructor
@@ -52,78 +45,10 @@ public class Tab2Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tab2, container, false);
-
-        fauth = FirebaseAuth.getInstance();
         itemList = view.findViewById(R.id.myitemList);
-        fStore = FirebaseFirestore.getInstance();
-        user = fauth.getCurrentUser();
-        storageReference = FirebaseStorage.getInstance().getReference();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-
-        final Query query = fStore.collection("Users").document(user.getUid()).collection("myItems").orderBy("title");
-        final FirestoreRecyclerOptions<Item> allNotes = new FirestoreRecyclerOptions.Builder<Item>()
-                .setQuery(query,Item.class)
-                .build();
-
-        noteAdapter = new FirestoreRecyclerAdapter<Item, ItemViewHolder>(allNotes) {
-
-            @Override
-            public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, final int i, @NonNull final Item item) {
-                itemViewHolder.noteTitle.setText(item.getTitle());
-                final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
-
-
-                StorageReference profileRef = storageReference.child("Items/" + docId  + "/image0");
-                profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(itemViewHolder.imageView);
-                    }
-                });
-
-
-                itemViewHolder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(v.getContext(), ItemDetail.class);
-                        i.putExtra("viewcount",String.valueOf(item.getViewcount()));
-                        i.putExtra("owner",item.getOwner());
-                        i.putExtra("title", item.getTitle());
-                        i.putExtra("price", item.getPrice());
-                        i.putExtra("content", item.getContent());
-                        i.putExtra("itemId", docId);
-                        v.getContext().startActivity(i);
-                    }
-                });
-                itemViewHolder.view.setOnLongClickListener(new View.OnLongClickListener() {
-                    @SuppressLint("ResourceType")
-                    @Override
-                    public boolean onLongClick(View view) {
-                        String[] list = {"Delete","Update"};
-                        new MaterialAlertDialogBuilder(getContext())
-                                .setItems(list, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        if (i == 0)
-                                        {
-                                            noteAdapter.getSnapshots().getSnapshot(i).getReference().delete();
-                                            fStore.collection("Items").document(docId).delete();
-                                        }
-                                    }
-                                })
-                                .show();
-                        return false;
-                    }
-                });
-            }
-
-            @NonNull
-            @Override
-            public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_item_cardview,parent,false);
-                return new ItemViewHolder(view);
-            }
-        };
+        noteAdapter = databseManager.getItems("Itemsa",true, firebaseUser.getUid());
 
 
         itemList.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
@@ -131,19 +56,6 @@ public class Tab2Fragment extends Fragment {
         return view;
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
-        public TextView noteTitle;
-        View view;
-        ImageView imageView;
-
-
-        public ItemViewHolder(@NonNull View itemView) {
-            super(itemView);
-            noteTitle = itemView.findViewById(R.id.cardview_title);
-            imageView = itemView.findViewById(R.id.cardview_photo);
-            view = itemView;
-        }
-    }
 
     @Override
     public void onStart() {

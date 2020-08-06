@@ -4,50 +4,76 @@ import com.google.type.Date;
 
 public class Chat {
 
-    private String reciever ;
-    private String sender;
-    private String message;
-    private long sendtime;
+    private String content, id, name,sender_id,type ;
+    private String date;
+    private boolean is_read;
 
     public Chat() {
     }
 
-    public Chat(String reciever, String sender, String message, long sendtime) {
-        this.reciever = reciever;
-        this.sender = sender;
-        this.message = message;
-        this.sendtime = sendtime;
+    public Chat(String content, String id, String name, String sender_id, String type, String date, boolean is_read) {
+        this.content = content;
+        this.id = id;
+        this.name = name;
+        this.sender_id = sender_id;
+        this.type = type;
+        this.date = date;
+        this.is_read = is_read;
     }
 
-    public String getReciever() {
-        return reciever;
+    public String getContent() {
+        return content;
     }
 
-    public void setReciever(String reciever) {
-        this.reciever = reciever;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getSender() {
-        return sender;
+    public String getId() {
+        return id;
     }
 
-    public void setSender(String sender) {
-        this.sender = sender;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getMessage() {
-        return message;
+    public String getName() {
+        return name;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public long getSendtime() {
-        return sendtime;
+    public String getSender_id() {
+        return sender_id;
     }
 
-    public void setSendtime(long sendtime) {
-        this.sendtime = sendtime;
+    public void setSender_id(String sender_id) {
+        this.sender_id = sender_id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public boolean isIs_read() {
+        return is_read;
+    }
+
+    public void setIs_read(boolean is_read) {
+        this.is_read = is_read;
     }
 }

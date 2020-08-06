@@ -55,15 +55,17 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         Chat chat = mChat.get(position);
-        holder.show_message.setText(chat.getMessage());
-        Date date = new Date(chat.getSendtime());
+        holder.show_message.setText(chat.getContent());
+
+        /*long date = Date.parse(chat.getDate());
         SimpleDateFormat format = new SimpleDateFormat("HH:mm");
-        holder.message_time.setText(format.format(date));
+        holder.message_time.setText(format.format(date));*/
     }
 
 
     @Override
     public int getItemCount() {
+        System.out.println(mChat.size());
         return mChat.size();
     }
 
@@ -83,7 +85,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     {
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         String fUseruid = fUser.getUid();
-        if (mChat.get(i).getSender().equals(fUseruid))
+        if (mChat.get(i).getSender_id().equals(fUseruid))
         {
             return MSG_TYPE_RIGHT;
         }

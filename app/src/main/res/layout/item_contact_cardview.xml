@@ -26,6 +26,19 @@
             android:fontFamily="@font/roboto_bold"
             android:layout_marginStart="8dp"/>
 
+        <TextView
+            android:id="@+id/contact_latest_mesage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/contact_photo"
+            android:layout_below="@id/contact_reciever"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="1"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:text="İsmet Alp Eren"
+            android:textSize="22sp" />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
