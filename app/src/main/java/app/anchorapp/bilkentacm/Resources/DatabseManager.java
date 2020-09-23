@@ -207,11 +207,10 @@ public class DatabseManager {
 
 
     //----------------- Coversation Exist? ------------------------
-
-
-    int count = 0;
-        public int conversationExist(String uid, final String chatId)
+     boolean exist;
+        public boolean conversationExist(String uid, final String chatId)
         {
+
             fDatabase = FirebaseDatabase.getInstance();
             DatabaseReference databaseReference = fDatabase.getReference().child("Users").child(uid).child("conversations");
 
@@ -219,13 +218,10 @@ public class DatabseManager {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for (DataSnapshot dsnapshot : snapshot.getChildren()) {
-                        Contact convo = dsnapshot.getValue(Contact.class);
                         if (dsnapshot.child("id").getValue() == chatId)
-                        {
-                            break;
-                        }
+                            exist = true;
                         else
-                            count++;
+                           exist = false;
                     }
                 }
 
@@ -234,6 +230,6 @@ public class DatabseManager {
 
                 }
             });
-            return count;
+            return exist ;
         }
 }

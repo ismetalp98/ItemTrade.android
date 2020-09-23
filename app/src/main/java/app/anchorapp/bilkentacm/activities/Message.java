@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -55,7 +57,7 @@ public class Message extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
     RecyclerView recyclerView;
     List<Chat> mChat;
-    List<Contact> mConversations;
+    boolean mConversations;
     String owner;
     String chatId;
     DatabaseReference reference;
@@ -144,11 +146,12 @@ public class Message extends AppCompatActivity {
         last_message.put("message", messagetosend);
 
 
-        DatabaseReference databaseReference_message = FirebaseDatabase.getInstance().getReference().child("Coversations").child(chatId).child("messages");
-        DatabaseReference databaseReference_sender = FirebaseDatabase.getInstance().getReference().child("Users").child(sender).child("conversations");
-        DatabaseReference documentReference_reciever = FirebaseDatabase.getInstance().getReference().child("Users").child(owner).child("conversations");
+        DocumentReference databaseReference_message = FirebaseFirestore.getInstance().collection("Coversations").document(chatId).collection("messages").document();
 
-        if (mConversations.isEmpty()) {
+        if (false) {
+
+            DocumentReference databaseReference_sender = FirebaseFirestore.getInstance().collection("Users").document(sender).collection("conversations").document();
+            DocumentReference documentReference_reciever = FirebaseFirestore.getInstance().collection("Users").document(owner).collection("conversations").document();
 
             HashMap<String, Object> chat_sender = new HashMap<>();
             HashMap<String, Object> chat_reciever = new HashMap<>();
@@ -168,28 +171,18 @@ public class Message extends AppCompatActivity {
             chat_reciever.put("latest_message", last_message);
 
 
-            databaseReference_sender.push().setValue(chat_sender);
-            documentReference_reciever.push().setValue(chat_reciever);
-
-        }
-        else
-        {
+            databaseReference_sender.set(chat_sender);
+            documentReference_reciever.set(chat_reciever);
 
         }
 
-        HashMap<String, Object> message = new HashMap<>();
-        message.put("sender_id", sender);
-        message.put("id", chatId);
-        message.put("is_read", false);
-        message.put("name", ownername);
-        message.put("content", messagetosend);
-        message.put("type", "text");
-        message.put("date", date);
+
+
 
         Chat chat = new Chat(messagetosend, chatId, ownername, sender, "text", date, false);
         mChat.add(chat);
 
-        databaseReference_message.setValue(mChat);
+        databaseReference_message.set(mChat);
 
         /*final String msg = messagetosend;
         final DatabaseReference documentReference = databaseReference.child("Users").child(fUser.getUid());
