@@ -33,7 +33,7 @@ import app.anchorapp.bilkentacm.models.Item;
 
 public class Tab4Fragment extends Fragment {
 
-    FirebaseRecyclerAdapter<Item, DatabseManager.ItemViewHolder> noteAdapter;
+    FirestoreRecyclerAdapter<Item, DatabseManager.ItemViewHolder> noteAdapter;
     RecyclerView itemList;
     DatabseManager databseManager = new DatabseManager();
     FirebaseUser user;

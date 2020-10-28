@@ -45,7 +45,7 @@ public class Tab1Fragment extends Fragment {
 
     RecyclerView contactList;
     DatabseManager manager = new DatabseManager();
-    FirebaseRecyclerAdapter<Contact, DatabseManager.ItemViewHolderConversations> noteAdapter;
+    FirestoreRecyclerAdapter<Contact, DatabseManager.ItemViewHolderConversations> noteAdapter;
     FirebaseUser user;
 
 

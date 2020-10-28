@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\GitHub\\asd\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
+            "outputFile": "C:\\Users\\ismet\\OneDrive\\Belgeler\\GitHub\\ItemTrade\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\cf23515831a30cf8e0e5ff774beb1451\\core-1.2.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\39c9f1b263ae8c5c4b9135a25be9f01a\\core-1.2.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\72755d8593c3ca1ed00b11907b10c688\\appcompat-1.1.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\535be843c23df54b7e7e53a75a3dcdc4\\appcompat-1.1.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

@@ -1,1 +1,6 @@
-[]
+{
+  "version": 1,
+  "applicationId": "app.anchorapp.bilkentacm",
+  "variantType": "BASE_APK",
+  "elements": []
+}

@@ -103,7 +103,7 @@ public class ItemDetail extends AppCompatActivity {
         }
 
 
-        Picasso.get().load(uris.get(0)).into(photos);
+
 
     }
 

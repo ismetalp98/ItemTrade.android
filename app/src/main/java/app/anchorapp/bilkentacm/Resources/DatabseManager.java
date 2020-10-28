@@ -14,13 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -35,35 +39,33 @@ import app.anchorapp.bilkentacm.models.Item;
 
 public class DatabseManager {
 
-    static FirebaseDatabase fDatabase;
-    FirebaseRecyclerAdapter<Item, ItemViewHolder> noteAdapter;
+    static FirebaseFirestore fDatabase;
+    FirestoreRecyclerAdapter<Item, ItemViewHolder> noteAdapter;
     Query query;
 
 
     //------------------------------------------- Get Items --------------------------------------------------
 
-    public FirebaseRecyclerAdapter getItems(String path, boolean search, String searchkey) {
-        fDatabase = FirebaseDatabase.getInstance();
+    public FirestoreRecyclerAdapter getItems(String path, boolean search, String searchkey) {
+        fDatabase = FirebaseFirestore.getInstance();
 
 
         if (search) {
-            query = fDatabase.getReference().child(path).orderByChild("owner").startAt(searchkey);
+            query = fDatabase.collection(path).orderBy("owner").startAt(searchkey);
         } else
-            query = fDatabase.getReference().child(path);
+            query = fDatabase.collection(path);
 
-        FirebaseRecyclerOptions<Item> allNotes = new FirebaseRecyclerOptions.Builder<Item>()
+        FirestoreRecyclerOptions<Item> allNotes = new FirestoreRecyclerOptions.Builder<Item>()
                 .setQuery(query, Item.class)
                 .build();
 
-        noteAdapter = new FirebaseRecyclerAdapter<Item, ItemViewHolder>(allNotes) {
+        noteAdapter = new FirestoreRecyclerAdapter<Item, ItemViewHolder>(allNotes) {
 
 
             @Override
             protected void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, int i, @NonNull final Item item) {
-                final String docId = noteAdapter.getSnapshots().getSnapshot(i).getKey();
+                final String docId = noteAdapter.getSnapshots().getSnapshot(i).getId();
                 itemViewHolder.noteTitle.setText(String.valueOf(item.getPrice()));
-                final Uri uri = Uri.parse(item.getUrls().get("url1"));
-                Picasso.get().load(uri).into(itemViewHolder.imageView);
                 final ArrayList<String> uris = new ArrayList<>();
                 for (String tempuri : item.getUrls().values()) {
                     uris.add(tempuri);
@@ -99,17 +101,17 @@ public class DatabseManager {
 
     //------------------------------ Get Conversations ----------------------------------------
 
-    public FirebaseRecyclerAdapter getConversations(String path) {
+    public FirestoreRecyclerAdapter getConversations(String path) {
 
-        FirebaseRecyclerAdapter<Contact, ItemViewHolderConversations> contactAdapter;
-        fDatabase = FirebaseDatabase.getInstance();
+        FirestoreRecyclerAdapter<Contact, ItemViewHolderConversations> contactAdapter;
+        fDatabase = FirebaseFirestore.getInstance();
 
-        query = fDatabase.getReference().child(path);
-        FirebaseRecyclerOptions<Contact> allNotes = new FirebaseRecyclerOptions.Builder<Contact>()
+        query = fDatabase.collection(path);
+        FirestoreRecyclerOptions<Contact> allNotes = new FirestoreRecyclerOptions.Builder<Contact>()
                 .setQuery(query, Contact.class)
                 .build();
 
-        contactAdapter = new FirebaseRecyclerAdapter<Contact, ItemViewHolderConversations>(allNotes) {
+        contactAdapter = new FirestoreRecyclerAdapter<Contact, ItemViewHolderConversations>(allNotes) {
 
             @Override
             protected void onBindViewHolder(@NonNull final ItemViewHolderConversations itemViewHolderConversations, final int i, @NonNull final Contact contact) {
@@ -211,10 +213,10 @@ public class DatabseManager {
         public boolean conversationExist(String uid, final String chatId)
         {
 
-            fDatabase = FirebaseDatabase.getInstance();
-            DatabaseReference databaseReference = fDatabase.getReference().child("Users").child(uid).child("conversations");
+            fDatabase = FirebaseFirestore.getInstance();
+            CollectionReference databaseReference = fDatabase.collection("Users").document(uid).collection("conversations");
 
-            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            databaseReference.add(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for (DataSnapshot dsnapshot : snapshot.getChildren()) {

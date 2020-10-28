@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -29,7 +30,7 @@ import app.anchorapp.bilkentacm.models.Item;
 
 public class Tab2Fragment extends Fragment {
 
-    FirebaseRecyclerAdapter<Item, DatabseManager.ItemViewHolder> noteAdapter;
+    FirestoreRecyclerAdapter<Item, DatabseManager.ItemViewHolder> noteAdapter;
     RecyclerView itemList;
     DatabseManager databseManager = new DatabseManager();
     FirebaseUser firebaseUser;

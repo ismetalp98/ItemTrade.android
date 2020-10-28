@@ -10,13 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4f6fd2e-0c7a-45c2-bb30-87ef486e71c8" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -48,9 +47,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZSjcfmgow7W3SovtRrOcd4sc4a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3_API_29" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-08-02T20:47:58.715Z" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SelectDeploymentTargetsDialog.selectedDevices" value="Pixel_3_API_29&#10;Pixel_3a_API_29" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -84,18 +89,6 @@
       <recent name="C:\GitHub\Bilkent_ACM\app\src\main\res\drawable" />
       <recent name="C:\GitHub\Bilkent_ACM_Tutorial\app\src\main\res\menu" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -156,7 +149,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+    <configuration default="true" type="JetRunConfigurationType">
       <module name="Bilkent ACM" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -169,7 +162,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="Bilkent ACM" />
       <option name="filePath" />
       <option name="vmParameters" />
@@ -229,5 +222,49 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2919" y="345" key="#app" timestamp="1602342792652">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2919" y="345" key="#app/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602342792652" />
+    <state x="2925" y="474" key="FileChooserDialogImpl" timestamp="1602344977742">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2925" y="474" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602344977742" />
+    <state width="2517" height="400" key="GridCell.Tab.0.bottom" timestamp="1603223472505">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1603223472505" />
+    <state width="2517" height="400" key="GridCell.Tab.0.center" timestamp="1603223472505">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1603223472505" />
+    <state width="2517" height="400" key="GridCell.Tab.0.left" timestamp="1603223472505">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1603223472505" />
+    <state width="2517" height="400" key="GridCell.Tab.0.right" timestamp="1603223472505">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="400" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1603223472505" />
+    <state x="2701" y="342" key="SettingsEditor" timestamp="1602342762605">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2701" y="342" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602342762605" />
+    <state x="2012" y="92" width="2376" height="1216" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1602342907603">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2012" y="92" width="2376" height="1216" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602342907603" />
+    <state x="691" y="403" key="com.intellij.ide.util.TipDialog" timestamp="1603278813597">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="691" y="403" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1603223233583" />
+    <state x="691" y="403" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603278813597" />
+    <state x="921" y="543" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1602352435499" />
+    <state x="2856" y="330" key="run.anything.popup" timestamp="1602343915932">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="2856" y="330" key="run.anything.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1602343915932" />
   </component>
 </project>

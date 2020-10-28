@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -39,7 +40,8 @@ public class TasksFragment extends Fragment {
     private Toolbar toolbar;
     RecyclerView itemList;
     DatabseManager manager = new DatabseManager();
-    FirebaseRecyclerAdapter<Item, DatabseManager.ItemViewHolder> noteAdapter;
+    FirestoreRecyclerAdapter<Item, DatabseManager.ItemViewHolder> noteAdapter;
+
 
 
     final static int RECOGNIZER_RESULT = 1;
@@ -60,7 +62,7 @@ public class TasksFragment extends Fragment {
         itemList = view.findViewById(R.id.itemList);
         //swipeRefreshLayout = view.findViewById(R.id.swiperefresh);
         itemList.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-        noteAdapter = manager.getItems("Itemsa",false,"");
+        noteAdapter = manager.getItems("Items",false,"");
         //mItems = new ArrayList<>();
 
 

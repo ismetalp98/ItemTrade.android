@@ -8,14 +8,14 @@ import java.util.HashMap;
 
 public class Item {
 
-    String title,content,owner,ownername,itemId;
-    long price,viewcount;
+    String title,content,owner,ownername,itemId,price;
+    long viewcount;
     HashMap<String,String> urls = new HashMap<>();
 
     public Item() { }
 
 
-    public Item(String title, String content, String owner, String ownername, String itemId, long price, long viewcount, HashMap<String,String> urls) {
+    public Item(String title, String content, String owner, String ownername, String itemId, String price, long viewcount, HashMap<String,String> urls) {
         this.title = title;
         this.content = content;
         this.owner = owner;
@@ -42,11 +42,11 @@ public class Item {
         this.content = content;
     }
 
-    public long getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

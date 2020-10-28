@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\GitHub\\asd\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+            "outputFile": "C:\\Users\\ismet\\OneDrive\\Belgeler\\GitHub\\ItemTrade\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\fe4a86ad590ee5d39bd92b59f4761dd1\\material-1.3.0-alpha01\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+                    "source": "C:\\Users\\ismet\\.gradle\\caches\\transforms-2\\files-2.1\\3bf24e00789d47ea4f81dffdf7793d93\\material-1.3.0-alpha01\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

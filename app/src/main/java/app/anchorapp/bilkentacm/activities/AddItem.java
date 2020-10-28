@@ -141,6 +141,7 @@ public class AddItem extends AppCompatActivity {
                     String contentToAdd = content.getText().toString();
                     String priceToAdd = price.getText().toString();
                     HashMap<String, Object> item = new HashMap<>();
+
                     item.put("title", titleToAdd);
                     item.put("content", contentToAdd);
                     item.put("price", priceToAdd);
@@ -246,7 +247,6 @@ public class AddItem extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 image.getDownloadUrl();
-
             }
         });
     }
