@@ -61,7 +61,6 @@ public class TasksFragment extends Fragment {
         fauth = FirebaseAuth.getInstance();
         itemList = view.findViewById(R.id.itemList);
         //swipeRefreshLayout = view.findViewById(R.id.swiperefresh);
-        itemList.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         noteAdapter = manager.getItems("Items",false,"");
         //mItems = new ArrayList<>();
 
